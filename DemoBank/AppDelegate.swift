@@ -10,24 +10,23 @@ import UIKit
 let appColor: UIColor = .red
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
- // let viewController = ViewController()
-  //  let collectionViewController = CollectionViewController()
-    let homeViewController = HomeViewController()
-    let collectionViewTableViewCell = CollectionViewTableViewCell()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let homeViewController = HomeViewController()
+        
+        let collectionViewTableViewCell = CollectionViewTableViewCell()
+        
+        homeViewController.changeStatusBarColor()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-                   window?.makeKeyAndVisible()
-                   window?.backgroundColor = .systemBackground
-                //  homeViewController.delegate = self
-     //   window?.rootViewController = collectionViewController
-      //  window?.rootViewController = collectionViewController
-       // window?.rootViewController = collectionViewTableViewCell
+        window?.makeKeyAndVisible()
+        window?.backgroundColor = .systemBackground
         
         window?.rootViewController = homeViewController
         
-      return true
+        return true
     }
 }
