@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     lazy var homeFeedtable : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
+        
         return table
     }()
 
@@ -69,9 +70,11 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else {return}
-        header.textLabel?.font = .systemFont(ofSize: 25)
-        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100 , height: header.bounds.height)
+     //   header.textLabel?.font = .systemFont(ofSize: 25)
         
+     header.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+//        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100 , height: header.bounds.height)
+//
         header.textLabel?.textColor = .black
     }
 }

@@ -13,9 +13,9 @@ class HeaderView: UIView {
         let button = UIButton()
         button.setTitle("View Balance", for: .normal)
         button.layer.borderColor = UIColor.systemRed.cgColor
-        button.backgroundColor = .red
+        button.backgroundColor = .systemRed
         button.layer.borderWidth = 1
-        button.layer.cornerRadius = 15
+     //   button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
