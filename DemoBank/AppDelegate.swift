@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeViewController = HomeViewController()
         
-        let collectionViewTableViewCell = CollectionViewTableViewCell()
-        
         homeViewController.changeStatusBarColor()
         
         window = UIWindow(frame: UIScreen.main.bounds)

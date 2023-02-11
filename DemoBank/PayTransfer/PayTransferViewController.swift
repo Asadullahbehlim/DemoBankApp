@@ -1,19 +1,19 @@
 //
-//  CollectionViewTableViewCell.swift
+//  PayTransferViewController.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 10/02/23.
+//  Created by Asadullah Behlim on 12/02/23.
 //
 
-import Foundation
 
+import Foundation
 import UIKit
 
-class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let iconLabelArray = ["Pay your Contact", "Loan and Card offers", "Account overview", "Scan any QR\n"]
+    let iconLabelArray = ["Transfer Money", "Bill Pay & Recharge", "BHIM UPI", "Scan Any QR", "One Time Transfer\n", "Pay Your contact", "Add/Manage Beneficiary", "See more\n"]
    
-    let iconNameArray = ["iphone.homebutton", "banknote", "indianrupeesign.circle", "qrcode.viewfinder"]
+    let iconNameArray = ["rectangle.portrait.and.arrow.right", "b.circle.fill", "arrow.right.square", "qrcode.viewfinder", "1.circle", "rectangle.portrait.and.arrow.right", "person.fill.badge.plus", "chevron.right.circle.fill"]
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -22,31 +22,31 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         return cv
     }()
     
-   static let identifier = "QuickAccessCollectionViewCell"
+    let cellId = "BankCollectionViewCell"
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(QuickAccessCollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewTableViewCell.identifier)
-        collectionView.register(QuickAccessHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickAccessHeaderTitleViewCell")
+        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
 
-        contentView.addSubview(collectionView)
+        addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            collectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5)
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5)
         ])
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +55,7 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as! QuickAccessCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BankCollectionViewCell", for: indexPath) as! BankCollectionViewCell
         
         cell.customImageView.image = UIImage(systemName: iconNameArray[indexPath.row])
         
@@ -78,8 +78,8 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "QuickAccessHeaderTitleViewCell", for: indexPath) as! QuickAccessHeaderTitleViewCell
-            header.titleLabel.text = "Quick Access"
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
+            header.titleLabel.text = "Pay & Transfer"
             return header
         }
         return UICollectionReusableView()

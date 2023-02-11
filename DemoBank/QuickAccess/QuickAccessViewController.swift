@@ -1,15 +1,14 @@
 //
-//  CollectionViewTableViewCell.swift
+//  TestViewController.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 10/02/23.
+//  Created by Asadullah Behlim on 11/02/23.
 //
 
 import Foundation
-
 import UIKit
 
-class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let iconLabelArray = ["Pay your Contact", "Loan and Card offers", "Account overview", "Scan any QR\n"]
    
@@ -22,27 +21,28 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         return cv
     }()
     
-   static let identifier = "QuickAccessCollectionViewCell"
+    let cellId = "QuickAccessCollectionViewCell"
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(QuickAccessCollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewTableViewCell.identifier)
+        collectionView.register(QuickAccessCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(QuickAccessHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickAccessHeaderTitleViewCell")
+        
 
-        contentView.addSubview(collectionView)
+        addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            collectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5)
+            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5)
         ])
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +55,7 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as! QuickAccessCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuickAccessCollectionViewCell", for: indexPath) as! QuickAccessCollectionViewCell
         
         cell.customImageView.image = UIImage(systemName: iconNameArray[indexPath.row])
         
@@ -88,6 +88,10 @@ class CollectionViewTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 50)
     }
+    
+   
+    
+    
 
 
 }
