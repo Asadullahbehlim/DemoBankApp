@@ -39,7 +39,7 @@ class HeaderView: UIView {
     lazy var salaryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.text = "₹29008"
+        label.text = "₹92008"
         label.textColor = .white
         return label
     }()

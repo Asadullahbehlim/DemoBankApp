@@ -119,7 +119,7 @@ class HomeViewController: UIViewController {
         
         // Add some views to the stack view
         for viewController in viewControllers {
-            viewController.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
+            viewController.heightAnchor.constraint(equalToConstant: 220.0).isActive = true
             stackView.addArrangedSubview(viewController)
         }
     }
