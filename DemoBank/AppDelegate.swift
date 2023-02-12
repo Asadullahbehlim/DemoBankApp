@@ -7,7 +7,11 @@
 
 import UIKit
 
-let appColor: UIColor = .red
+//MARK: - App Custom Colors
+let appBlueColor = UIColor(red: 0/255, green: 56/255, blue: 116/255, alpha: 1)
+let appRedColor = UIColor(red: 237/255, green: 28/255, blue: 36/255, alpha: 1)
+let appGrayColor = UIColor(red: 234/255, green: 235/255, blue: 237/255, alpha: 1)
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -17,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeViewController = HomeViewController()
         
-       homeViewController.changeStatusBarColor()
+        homeViewController.changeStatusBarColor()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

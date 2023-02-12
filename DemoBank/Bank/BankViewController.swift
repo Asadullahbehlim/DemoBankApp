@@ -25,18 +25,21 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .white
+        collectionView.layer.cornerRadius = 20
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
 
         addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5)
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)
         ])
     }
     

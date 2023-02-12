@@ -27,6 +27,7 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
         super.init(frame: frame)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = appGrayColor
         collectionView.register(QuickAccessCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(QuickAccessHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickAccessHeaderTitleViewCell")
         
@@ -57,12 +58,17 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuickAccessCollectionViewCell", for: indexPath) as! QuickAccessCollectionViewCell
         
-        cell.customImageView.image = UIImage(systemName: iconNameArray[indexPath.row])
+        cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
+        // And in the cellForItemAt method:
+        cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        cell.customImageView.tag = indexPath.row
         
         cell.customLabel.text = iconLabelArray[indexPath.row]
         
         return cell
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 85, height: 85)
@@ -90,7 +96,10 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
     }
     
  
-    
+    @objc func buttonTapped(_ sender: UIButton) {
+        let buttonName = iconLabelArray[sender.tag]
+        print(buttonName)
+    }
     
 
 

@@ -28,6 +28,8 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         super.init(frame: frame)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = .white
+        collectionView.layer.cornerRadius = 20
         collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
 
@@ -35,9 +37,9 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5)
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)
         ])
     }
     

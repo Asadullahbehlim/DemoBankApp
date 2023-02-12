@@ -18,9 +18,11 @@ class BankCollectionViewCell: UICollectionViewCell {
         customImageView.contentMode = .scaleAspectFit
         customImageView.clipsToBounds = true
         customImageView.translatesAutoresizingMaskIntoConstraints = false
-        customImageView.tintColor = .red
+        customImageView.tintColor = appBlueColor
         customImageView.backgroundColor = .white
         contentView.addSubview(customImageView)
+        
+        
 
         customLabel.textAlignment = .center
         customLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -30,9 +32,9 @@ class BankCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(customLabel)
 
         NSLayoutConstraint.activate([
-            customImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            customImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             customImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            customImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            customImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             customImageView.bottomAnchor.constraint(equalTo: customLabel.topAnchor, constant: -5),
 
             customLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
