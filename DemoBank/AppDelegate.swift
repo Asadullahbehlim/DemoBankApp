@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeViewController = HomeViewController()
         
-        homeViewController.changeStatusBarColor()
+       homeViewController.changeStatusBarColor()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

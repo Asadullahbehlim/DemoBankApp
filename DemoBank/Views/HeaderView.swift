@@ -17,8 +17,14 @@ class HeaderView: UIView {
         button.layer.borderWidth = 1
      //   button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
         return button
     }()
+    
+       @objc func buttonTapped() {
+           print("View Balance Button Tapped")
+       }
     
     lazy var savingStackView: UIStackView = {
         let stackView = UIStackView()
@@ -27,6 +33,8 @@ class HeaderView: UIView {
         stackView.spacing = 15
         return stackView
     }()
+    
+   
     
     lazy var savingLabel: UILabel = {
         let label = UILabel()
@@ -98,5 +106,7 @@ class HeaderView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
 }
