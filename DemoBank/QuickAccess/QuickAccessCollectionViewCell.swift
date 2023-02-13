@@ -30,7 +30,6 @@ class QuickAccessCollectionViewCell: UICollectionViewCell {
         customImageView.layer.masksToBounds = false
 
         
-        
         contentView.addSubview(customImageView)
 
         customLabel.textAlignment = .center

@@ -16,6 +16,8 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        // UICollectionViewFlowLayout is a concrete class of UICollectionViewLayout that has all its four members implemented, in the way that the cells will be arranged in a grid manner.
+        
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
         return cv
