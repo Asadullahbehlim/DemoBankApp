@@ -17,6 +17,10 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+     //   UICollectionViewFlowLayout is a class in UIKit that provides a layout for a UICollectionView object
+        
+        // By using UICollectionViewFlowLayout, you can customize the layout of a collection view by specifying things like the size and position of items, the spacing between items and sections, and the direction of the scrolling.
+        
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
         return cv
@@ -78,6 +82,8 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         return 0
     }
     
+    // viewForSupplementaryElementOfKind" is a method in the UICollectionViewDelegate protocol of UIKit. It is used to return the supplementary view for a given section in a UICollectionView.
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
@@ -91,6 +97,7 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: collectionView.frame.width, height: 50)
     }
 
+    
 
 }
 

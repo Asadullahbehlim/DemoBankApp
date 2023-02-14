@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class QuickAccessCollectionViewCell: UICollectionViewCell {
-    let customImageView = UIButton()
+    let customImageView = UIButton(type: .system)
     let customLabel = UILabel()
     
     override init(frame: CGRect) {

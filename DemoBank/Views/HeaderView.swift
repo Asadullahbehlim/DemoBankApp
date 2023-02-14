@@ -10,11 +10,12 @@ import UIKit
 class HeaderView: UIView {
     
     private let viewBalance: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("View Balance", for: .normal)
         button.layer.borderColor = UIColor.systemRed.cgColor
         button.backgroundColor = .systemRed
         button.layer.borderWidth = 1
+        button.tintColor = .white
      //   button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
@@ -35,6 +36,7 @@ class HeaderView: UIView {
     }()
     
    
+    // "Lazy" is a term used in UIKit to describe a technique for loading resources only when they are needed. This helps to improve the performance of an iOS app by avoiding the load of unnecessary resources.
     
     lazy var savingLabel: UILabel = {
         let label = UILabel()
