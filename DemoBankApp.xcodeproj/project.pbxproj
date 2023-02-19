@@ -13,13 +13,15 @@
 		4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B82997CB45008BAA33 /* BankViewController.swift */; };
 		4107B9BB2997CB57008BAA33 /* BankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9BA2997CB57008BAA33 /* BankCollectionViewCell.swift */; };
 		4107B9BD2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9BC2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift */; };
-		41100CE5299B6D2300832727 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41100CE4299B6D2300832727 /* AppColors.swift */; };
+		41100CE5299B6D2300832727 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41100CE4299B6D2300832727 /* GlobalConstants.swift */; };
 		41213C43299249E30045EE54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C42299249E30045EE54 /* AppDelegate.swift */; };
 		41213C4C299249E30045EE54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41213C4B299249E30045EE54 /* Assets.xcassets */; };
 		41213C4F299249E30045EE54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41213C4D299249E30045EE54 /* LaunchScreen.storyboard */; };
 		41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5729924C8F0045EE54 /* HomeViewController.swift */; };
 		41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5A299251CA0045EE54 /* HeaderView.swift */; };
 		4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */; };
+		413084C229A2ACDF00B542D5 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413084C129A2ACDF00B542D5 /* NavBarView.swift */; };
+		4144F238299E308D00315553 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144F237299E308D00315553 /* CollectionViewController.swift */; };
 		414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEE829981DE40040CB81 /* PayTransferViewController.swift */; };
 		414BBEEB29981E000040CB81 /* PayTransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */; };
 		414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */; };
@@ -38,7 +40,7 @@
 		4107B9B82997CB45008BAA33 /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		4107B9BA2997CB57008BAA33 /* BankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionViewCell.swift; sourceTree = "<group>"; };
 		4107B9BC2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankHeaderTitleViewCell.swift; sourceTree = "<group>"; };
-		41100CE4299B6D2300832727 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		41100CE4299B6D2300832727 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		41213C3F299249E30045EE54 /* DemoBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41213C42299249E30045EE54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41213C4B299249E30045EE54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		41213C5729924C8F0045EE54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		41213C5A299251CA0045EE54 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		413084C129A2ACDF00B542D5 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		4144F237299E308D00315553 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = ../CollectionViewController.swift; sourceTree = "<group>"; };
 		414BBEE829981DE40040CB81 /* PayTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferViewController.swift; sourceTree = "<group>"; };
 		414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferCollectionViewCell.swift; sourceTree = "<group>"; };
 		414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferTitleViewCell.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 		41100CE3299B6CF600832727 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				41100CE4299B6D2300832727 /* AppColors.swift */,
+				41100CE4299B6D2300832727 /* GlobalConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				41213C5729924C8F0045EE54 /* HomeViewController.swift */,
+				4144F237299E308D00315553 /* CollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				41213C5A299251CA0045EE54 /* HeaderView.swift */,
+				413084C129A2ACDF00B542D5 /* NavBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,19 +262,21 @@
 				414BBEFB299820760040CB81 /* LoansTitleViewCell.swift in Sources */,
 				4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */,
 				4107B9B32997B221008BAA33 /* QuickAccessCollectionViewCell.swift in Sources */,
+				413084C229A2ACDF00B542D5 /* NavBarView.swift in Sources */,
 				4107B9BD2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift in Sources */,
 				41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */,
 				414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */,
 				414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */,
 				41213C43299249E30045EE54 /* AppDelegate.swift in Sources */,
 				4107B9B12997AC89008BAA33 /* QuickAccessViewController.swift in Sources */,
-				41100CE5299B6D2300832727 /* AppColors.swift in Sources */,
+				41100CE5299B6D2300832727 /* GlobalConstants.swift in Sources */,
 				41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */,
 				4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */,
 				414BBEF52998202D0040CB81 /* LoansCollectionViewCell.swift in Sources */,
 				4107B9BB2997CB57008BAA33 /* BankCollectionViewCell.swift in Sources */,
 				4107B9B52997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift in Sources */,
 				414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */,
+				4144F238299E308D00315553 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

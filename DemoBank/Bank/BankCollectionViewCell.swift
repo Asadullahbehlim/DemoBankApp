@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class BankCollectionViewCell: UICollectionViewCell {
+    
+    let identifier = "BankViewCell"
     let customImageView = UIImageView()
     let customLabel = UILabel()
 

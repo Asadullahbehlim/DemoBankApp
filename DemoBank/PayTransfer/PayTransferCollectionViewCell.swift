@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class PayTransferCollectionViewCell: UICollectionViewCell {
+    
+    let identifier = "PayViewCell"
+
     let customImageView = UIImageView()
     let customLabel = UILabel()
 

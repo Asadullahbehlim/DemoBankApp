@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class CardsCollectionViewCell: UICollectionViewCell {
+    
+    let identifier = "CardsViewCell"
+
     let customImageView = UIImageView()
     let customLabel = UILabel()
 

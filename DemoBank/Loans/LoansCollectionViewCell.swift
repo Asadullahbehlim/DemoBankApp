@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class LoansCollectionViewCell: UICollectionViewCell {
+    
+    let identifier = "LoansViewCell"
+
     let customImageView = UIImageView()
     let customLabel = UILabel()
 

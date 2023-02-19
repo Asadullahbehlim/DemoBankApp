@@ -35,7 +35,6 @@ class HeaderView: UIView {
         return stackView
     }()
     
-   
     // "Lazy" is a term used in UIKit to describe a technique for loading resources only when they are needed. This helps to improve the performance of an iOS app by avoiding the load of unnecessary resources.
     
     lazy var savingLabel: UILabel = {
@@ -49,7 +48,7 @@ class HeaderView: UIView {
     lazy var salaryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.text = "₹92008"
+        label.text = "₹35000"
         label.textColor = .white
         return label
     }()
@@ -62,20 +61,20 @@ class HeaderView: UIView {
         return imageView
     }()
     
-    private func addGradient() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [
-            UIColor.clear.cgColor,
-            UIColor.systemBackground.cgColor
-        ]
-        gradientLayer.frame = bounds
-        layer.addSublayer(gradientLayer)
-    }
-    
+//    private func addGradient() {
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [
+//            UIColor.clear.cgColor,
+//            UIColor.systemBackground.cgColor
+//        ]
+//        gradientLayer.frame = bounds
+//        layer.addSublayer(gradientLayer)
+//    }
+//
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(heroImageView)
-        addGradient()
+  //     addGradient()
         savingStackView.addArrangedSubview(savingLabel)
         savingStackView.addArrangedSubview(salaryLabel)
         addSubview(viewBalance)
@@ -109,6 +108,5 @@ class HeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
+
 }

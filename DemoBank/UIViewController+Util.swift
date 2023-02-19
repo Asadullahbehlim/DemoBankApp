@@ -1,74 +1,128 @@
-//
-//  UIViewController+Util.swift
-//  DemoBank
-//
-//  Created by Asadullah Behlim on 10/02/23.
-//
-
-import Foundation
 import UIKit
 
-//MARK: - Status Bar & Navigation Bar Customization.
 extension UIViewController {
-    //MARK: - Status Bar & Navigation Bar Customization.
-        
-        func changeStatusBarColor() {
-            if #available(iOS 13.0, *) {
-                let app = UIApplication.shared
-               let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-                
-//            let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-
-                let statusbarView = UIView()
-                
-                statusbarView.backgroundColor = appRedColor
-                view.addSubview(statusbarView)
-              
-                statusbarView.translatesAutoresizingMaskIntoConstraints = false
-                statusbarView.heightAnchor
-                    .constraint(equalToConstant: statusBarHeight).isActive = true
-                statusbarView.widthAnchor
-                    .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
-                statusbarView.topAnchor
-                    .constraint(equalTo: view.topAnchor).isActive = true
-                statusbarView.centerXAnchor
-                    .constraint(equalTo: view.centerXAnchor).isActive = true
-              
-            } else {
-                let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-                statusBar?.backgroundColor = appRedColor
-            }
+    
+    func changeStatusBarColor() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height {
+            
+            let statusbarView = UIView()
+            statusbarView.backgroundColor = appRedColor
+            view.addSubview(statusbarView)
+            
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
+            statusbarView.heightAnchor
+                .constraint(equalToConstant: statusBarHeight).isActive = true
+            statusbarView.widthAnchor
+                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+            statusbarView.topAnchor
+                .constraint(equalTo: view.topAnchor).isActive = true
+            statusbarView.centerXAnchor
+                .constraint(equalTo: view.centerXAnchor).isActive = true
+            
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = appRedColor
         }
+    }
+    
+    
+    func setNavigationBar(title: String) -> UINavigationBar {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height {
+            
+            let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.size.width, height: 50))
+
+            
+            // Create stack view to hold the buttons
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.spacing = 12
+            stackView.alignment = .center
+            
+            
+            // Create profile button
+            let menuButton = UIButton()
+            menuButton.setImage(UIImage(systemName: "text.alignleft"), for: .normal)
+            menuButton.tintColor = .white
+            menuButton.translatesAutoresizingMaskIntoConstraints = false
+            menuButton.addTarget(nil, action: #selector(menuButtonTapped), for: .touchUpInside)
+            menuButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            menuButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            stackView.addArrangedSubview(menuButton)
+            
+            let titleLabel = UILabel()
+            titleLabel.text = title
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 15.5)
+            titleLabel.textColor = .white
+            stackView.addArrangedSubview(titleLabel)
+            
+            // Create profile button
+            let profileButton = UIButton()
+            profileButton.setImage(UIImage(systemName: "person.crop.circle.fill"), for: .normal)
+            profileButton.tintColor = .white
+            profileButton.addTarget(nil, action: #selector(profileButtonTapped), for: .touchUpInside)
+            profileButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            profileButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            stackView.addArrangedSubview(profileButton)
+                        
+            // Create bell button
+            let bellButton = UIButton()
+            bellButton.setImage(UIImage(systemName: "bell"), for: .normal)
+            bellButton.tintColor = .white
+            bellButton.addTarget(nil, action: #selector(bellButtonTapped), for: .touchUpInside)
+            bellButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            bellButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            stackView.addArrangedSubview(bellButton)
+            
+            // Create search button
+            let searchButton = UIButton()
+            searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+            searchButton.tintColor = .white
+            searchButton.addTarget(nil, action: #selector(searchButtonTapped), for: .touchUpInside)
+            searchButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            searchButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            stackView.addArrangedSubview(searchButton)
+            
+            // Add stack view to navigation item
+            let navigationItem = UINavigationItem()
+            let rightBarButton = UIBarButtonItem(customView: stackView)
+            navigationItem.rightBarButtonItem = rightBarButton
+            
+            // Customize navigation bar appearance
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithTransparentBackground()
+            navBarAppearance.backgroundColor = appRedColor
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().standardAppearance = navBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+            
+            // Set navigation item to navigation bar
+            navigationBar.items = [navigationItem]
+            
+            return navigationBar
+        }
+        return UINavigationBar()
+    }
+
+    
+    @objc func menuButtonTapped(_ sender: UIButton) {
+        print("menu tapped!")
+    }
+    
+    @objc func profileButtonTapped(_ sender: UIButton) {
+        print("profile tapped!")
+    }
+    
+    @objc func searchButtonTapped(_ sender: UIButton) {
+        print("search tapped!")
+    }
+    
+    @objc func bellButtonTapped(_ sender: UIButton) {
+        print("bell tapped!")
+    }
 }
-    
-    
-    
-    
-    
-    
-    
-    
-//        func setNavigationBar() -> UINavigationBar {
-//
-//
-//            let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: UIApplication.shared.statusBarFrame.size.height, width: view.frame.size.width, height:50))
-//            let navigationItem = UINavigationItem()
-//            navigationItem.title = "Add/Manage Beneficiary"
-//
-//            navigationBar.tintColor = .white
-//            let navBarAppearance = UINavigationBarAppearance()
-//            navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
-//            navBarAppearance.backgroundColor = appRedColor
-//            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-//            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//            UINavigationBar.appearance().standardAppearance = navBarAppearance
-//            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-//
-//            let chevronButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left") , style: .plain, target: nil, action: nil)
-//            navigationItem.leftBarButtonItem = chevronButton
-//            navigationBar.items = [navigationItem]
-//
-//            return navigationBar
-//        }
 
 

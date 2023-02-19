@@ -14,8 +14,16 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
    
     let iconNameArray = ["indianrupeesign.circle", "arrow.up.arrow.down", "note.text", "bitcoinsign.circle.fill", "eye", "banknote.fill", "cart", "chevron.right.circle.fill"]
     
+    
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        
+        // UICollectionViewFlowLayout is a concrete class of UICollectionViewLayout that has all its four members implemented, in the way that the cells will be arranged in a grid manner.
+        
+        // By using UICollectionViewFlowLayout, you can customize the layout of a collection view by specifying things like the size and position of items, the spacing between items and sections, and the direction of the scrolling.
+        
+        
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
         return cv
@@ -77,6 +85,9 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    
+    // 'viewForSupplementaryElementOfKind' - This method is called by a collection view when it needs to display a supplementary view, such as a header or footer, and asks the delegate to provide a corresponding view.
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
