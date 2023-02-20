@@ -22,7 +22,7 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         return cv
     }()
     
-    let cellId = "BankCollectionViewCell"
+    let cellId = "PayTransferCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,8 +30,8 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         collectionView.delegate = self
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 20
-        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
+        collectionView.register(PayTransferCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(PayTransferTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "PayTransferTitleViewCell")
 
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,9 +57,12 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BankCollectionViewCell", for: indexPath) as! BankCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PayTransferCollectionViewCell
         
-        cell.customImageView.image = UIImage(systemName: iconNameArray[indexPath.row])
+        cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
+        // And in the cellForItemAt method:
+        cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        cell.customImageView.tag = indexPath.row
         
         cell.customLabel.text = iconLabelArray[indexPath.row]
         
@@ -80,7 +83,7 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "PayTransferTitleViewCell", for: indexPath) as! PayTransferTitleViewCell
             header.titleLabel.text = "Pay & Transfer"
             return header
         }
@@ -91,5 +94,8 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         return CGSize(width: collectionView.frame.width, height: 50)
     }
 
-
+    @objc func buttonTapped(_ sender: UIButton) {
+        let buttonName = iconLabelArray[sender.tag]
+        print(buttonName)
+    }
 }

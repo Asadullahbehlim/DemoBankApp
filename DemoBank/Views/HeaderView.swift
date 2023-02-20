@@ -6,26 +6,45 @@
 //
 //
 import UIKit
+import Foundation
 
-class HeaderView: UIView {
+class HeaderView: UIView{
     
-    private let viewBalance: UIButton = {
+    private lazy var viewBalance: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("View Balance", for: .normal)
         button.layer.borderColor = UIColor.systemRed.cgColor
         button.backgroundColor = .systemRed
         button.layer.borderWidth = 1
         button.tintColor = .white
-     //   button.layer.cornerRadius = 15
+     //  button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 
         return button
     }()
     
-       @objc func buttonTapped() {
-           print("View Balance Button Tapped")
-       }
+   
+    @objc func buttonTapped() {
+        guard let viewController = self.getViewController() else {
+            return
+        }
+        let textViewController = TextViewController()
+        textViewController.textToShow = "View Balance Button Tapped"
+        viewController.present(textViewController, animated: true, completion: nil)
+    }
+
+    private func getViewController() -> UIViewController? {
+          var responder: UIResponder? = self
+        while let nextResponder = responder?.next {
+            responder = nextResponder
+            if let viewController = responder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
+
     
     lazy var savingStackView: UIStackView = {
         let stackView = UIStackView()
@@ -101,6 +120,8 @@ class HeaderView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        // To adjust the frames of the view's subviews to ensure that they are positioned correctly within the view.
+        
         heroImageView.frame = bounds
     }
     

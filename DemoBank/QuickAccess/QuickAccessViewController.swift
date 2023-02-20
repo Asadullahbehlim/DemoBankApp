@@ -1,5 +1,5 @@
 //
-//  TestViewController.swift
+//  QuickAccessViewController.swift
 //  DemoBank
 //
 //  Created by Asadullah Behlim on 11/02/23.
@@ -63,7 +63,7 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
           //        cell.layer.cornerRadius = 15
           //        return cell
           
-          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuickAccessCollectionViewCell", for: indexPath) as! QuickAccessCollectionViewCell
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! QuickAccessCollectionViewCell
           
           cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
           // And in the cellForItemAt method:

@@ -9,20 +9,20 @@ import Foundation
 import UIKit
 
 class PayTransferCollectionViewCell: UICollectionViewCell {
-    
-    let identifier = "PayViewCell"
 
-    let customImageView = UIImageView()
+    let customImageView = UIButton(type: .system)
     let customLabel = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        customImageView.contentMode = .scaleAspectFit
+        customImageView.contentMode = .scaleAspectFill
         customImageView.clipsToBounds = true
         customImageView.translatesAutoresizingMaskIntoConstraints = false
-        customImageView.tintColor = .red
+        customImageView.tintColor = appBlueColor
         customImageView.backgroundColor = .white
+        customImageView.frame = CGRect(x: 0, y: 0, width: 5, height: 5)
+        customImageView.layer.cornerRadius = 10
         contentView.addSubview(customImageView)
 
         customLabel.textAlignment = .center

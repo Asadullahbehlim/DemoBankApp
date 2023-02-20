@@ -26,7 +26,7 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         return cv
     }()
     
-    let cellId = "BankCollectionViewCell"
+    let cellId = "CardsCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,8 +34,8 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         collectionView.delegate = self
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 20
-        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
+        collectionView.register(CardsCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CardsTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CardsTitleViewCell")
 
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -61,9 +61,12 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BankCollectionViewCell", for: indexPath) as! BankCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardsCollectionViewCell
         
-        cell.customImageView.image = UIImage(systemName: iconNameArray[indexPath.row])
+        cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
+        // And in the cellForItemAt method:
+        cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        cell.customImageView.tag = indexPath.row
         
         cell.customLabel.text = iconLabelArray[indexPath.row]
         
@@ -86,7 +89,7 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CardsTitleViewCell", for: indexPath) as! CardsTitleViewCell
             header.titleLabel.text = "Cards"
             return header
         }
@@ -97,7 +100,9 @@ class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: collectionView.frame.width, height: 50)
     }
 
-    
-
+    @objc func buttonTapped(_ sender: UIButton) {
+        let buttonName = iconLabelArray[sender.tag]
+        print(buttonName)
+    }
 }
 

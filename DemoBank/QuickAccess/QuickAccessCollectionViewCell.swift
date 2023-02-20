@@ -10,8 +10,6 @@ import UIKit
 
 class QuickAccessCollectionViewCell: UICollectionViewCell {
     
-    let identifier = "QuickAccessCell"
-    
     let customImageView = UIButton(type: .system)
     let customLabel = UILabel()
     
