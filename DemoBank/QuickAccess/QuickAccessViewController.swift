@@ -12,6 +12,7 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
   
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        
         // UICollectionViewFlowLayout is a concrete class of UICollectionViewLayout that has all its four members implemented, in the way that the cells will be arranged in a grid manner.
         
         // By using UICollectionViewFlowLayout, you can customize the layout of a collection view by specifying things like the size and position of items, the spacing between items and sections, and the direction of the scrolling.
@@ -101,7 +102,8 @@ class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionV
     
     @objc func buttonTapped(_ sender: UIButton) {
         let buttonName = allData[0].data.label[sender.tag]
-        print(buttonName)
+
+        print("\(buttonName) Tapped")
     }
     
 }

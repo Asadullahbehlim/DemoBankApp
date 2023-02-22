@@ -10,14 +10,12 @@ import UIKit
 
 class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
         // UICollectionViewFlowLayout is a concrete class of UICollectionViewLayout that has all its four members implemented, in the way that the cells will be arranged in a grid manner.
         
         // By using UICollectionViewFlowLayout, you can customize the layout of a collection view by specifying things like the size and position of items, the spacing between items and sections, and the direction of the scrolling.
-        
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
@@ -55,7 +53,6 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
        
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         //        cell.backgroundColor = .red
@@ -66,9 +63,10 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
         
         cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
         // And in the cellForItemAt method:
-        cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         cell.customImageView.tag = indexPath.row
-        
+       // cell.customImageView.setTitle(allData[1].data.label[indexPath.row], for: .normal)
+
         cell.customLabel.text = allData[1].data.label[indexPath.row]
         
         return cell
@@ -86,7 +84,6 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
         return 0
     }
     
-    
     // 'viewForSupplementaryElementOfKind' - This method is called by a collection view when it needs to display a supplementary view, such as a header or footer, and asks the delegate to provide a corresponding view.
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -103,8 +100,22 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
-        let buttonName = allData[1].data.label[sender.tag]
-        print(buttonName)
+        guard let viewController = self.getViewController() else {
+            return
+        }
+        let buttonViewController = ButtonViewController()
+        buttonViewController.buttonToShow = allData[1].data.label[sender.tag]
+        viewController.present(buttonViewController, animated: true, completion: nil)
     }
 
+    private func getViewController() -> UIViewController? {
+          var responder: UIResponder? = self
+        while let nextResponder = responder?.next {
+            responder = nextResponder
+            if let viewController = responder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 }

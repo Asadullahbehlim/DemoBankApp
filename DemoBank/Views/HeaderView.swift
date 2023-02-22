@@ -23,7 +23,6 @@ class HeaderView: UIView{
 
         return button
     }()
-    
    
     @objc func buttonTapped() {
         guard let viewController = self.getViewController() else {
