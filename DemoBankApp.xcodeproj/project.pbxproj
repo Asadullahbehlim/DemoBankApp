@@ -20,6 +20,7 @@
 		41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5729924C8F0045EE54 /* HomeViewController.swift */; };
 		41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5A299251CA0045EE54 /* HeaderView.swift */; };
 		4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */; };
+		4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */; };
 		4144F238299E308D00315553 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144F237299E308D00315553 /* CollectionViewController.swift */; };
 		414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEE829981DE40040CB81 /* PayTransferViewController.swift */; };
 		414BBEEB29981E000040CB81 /* PayTransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */; };
@@ -30,9 +31,9 @@
 		414BBEF7299820440040CB81 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */; };
 		414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */; };
 		414BBEFB299820760040CB81 /* LoansTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */; };
+		417118F729A4D14100B9B593 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417118F629A4D14100B9B593 /* DataModel.swift */; };
+		417118FA29A4E13800B9B593 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 417118F929A4E13800B9B593 /* Data.json */; };
 		418EDBC829A358C700AAB169 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EDBC729A358C700AAB169 /* TextViewController.swift */; };
-		418EDBCB29A396E800AAB169 /* BankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EDBCA29A396E800AAB169 /* BankModel.swift */; };
-		418EDBCE29A3994200AAB169 /* BankData.json in Resources */ = {isa = PBXBuildFile; fileRef = 418EDBCD29A3994200AAB169 /* BankData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		41213C5729924C8F0045EE54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		41213C5A299251CA0045EE54 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4144F237299E308D00315553 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = ../CollectionViewController.swift; sourceTree = "<group>"; };
 		414BBEE829981DE40040CB81 /* PayTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferViewController.swift; sourceTree = "<group>"; };
 		414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -61,9 +63,9 @@
 		414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTitleViewCell.swift; sourceTree = "<group>"; };
 		414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansTitleViewCell.swift; sourceTree = "<group>"; };
+		417118F629A4D14100B9B593 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		417118F929A4E13800B9B593 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		418EDBC729A358C700AAB169 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
-		418EDBCA29A396E800AAB169 /* BankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankModel.swift; sourceTree = "<group>"; };
-		418EDBCD29A3994200AAB169 /* BankData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BankData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +131,8 @@
 				414BBEE729981D650040CB81 /* PayTransfer */,
 				4107B9B72997CA7F008BAA33 /* Bank */,
 				4107B9B62997CA20008BAA33 /* QuickAccess */,
-				418EDBC929A3962B00AAB169 /* Model */,
-				418EDBCC29A3978100AAB169 /* Data */,
+				417118F829A4E00000B9B593 /* Resources */,
+				418EDBC929A3962B00AAB169 /* Models */,
 				41213C59299251A90045EE54 /* Views */,
 				41213C5629924C740045EE54 /* Controllers */,
 				41213C42299249E30045EE54 /* AppDelegate.swift */,
@@ -191,20 +193,21 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
-		418EDBC929A3962B00AAB169 /* Model */ = {
+		417118F829A4E00000B9B593 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				418EDBCA29A396E800AAB169 /* BankModel.swift */,
+				417118F929A4E13800B9B593 /* Data.json */,
 			);
-			path = Model;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		418EDBCC29A3978100AAB169 /* Data */ = {
+		418EDBC929A3962B00AAB169 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				418EDBCD29A3994200AAB169 /* BankData.json */,
+				417118F629A4D14100B9B593 /* DataModel.swift */,
+				4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */,
 			);
-			path = Data;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +268,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				418EDBCE29A3994200AAB169 /* BankData.json in Resources */,
 				41213C4F299249E30045EE54 /* LaunchScreen.storyboard in Resources */,
 				41213C4C299249E30045EE54 /* Assets.xcassets in Resources */,
+				417118FA29A4E13800B9B593 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,10 +293,11 @@
 				41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */,
 				414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */,
 				414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */,
-				418EDBCB29A396E800AAB169 /* BankModel.swift in Sources */,
 				41213C43299249E30045EE54 /* AppDelegate.swift in Sources */,
 				4107B9B12997AC89008BAA33 /* QuickAccessViewController.swift in Sources */,
+				417118F729A4D14100B9B593 /* DataModel.swift in Sources */,
 				41100CE5299B6D2300832727 /* GlobalConstants.swift in Sources */,
+				4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */,
 				41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */,
 				4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */,
 				414BBEF52998202D0040CB81 /* LoansCollectionViewCell.swift in Sources */,

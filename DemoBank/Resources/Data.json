@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "title": "Quick Access",
+        "data" : {
+            "label": ["Pay your Contact", "Loan and Card offers", "Account overview", "Scan any \n QR"],
+            "iconName": ["iphone.homebutton", "banknote", "indianrupeesign.circle", "qrcode.viewfinder"]
+        }
+    },
+    
+    {
+        "id": 2,
+        "title": "Bank",
+        "data": {
+            "label": ["Account Overview", "Account Activity", "Statement\n", "Fixed/Recurring", "One View\n", "Cheque Requests", "Spendz Prepatitle", "See more\n"],
+            "iconName": ["indianrupeesign.circle", "arrow.up.arrow.down", "note.text", "bitcoinsign.circle.fill", "eye", "banknote.fill", "cart", "chevron.right.circle.fill"]
+        }
+    },
+    
+    {
+        "id": 3,
+        "title": "Pay & Transfer",
+        "data": {
+            "label": ["Transfer Money", "Bill Pay & Recharge", "BHIM UPI", "Scan Any QR", "One Time Transfer\n", "Pay Your contact", "Add/Manage Beneficiary", "See more\n"],
+            "iconName": ["rectangle.portrait.and.arrow.right", "b.circle.fill", "arrow.right.square", "qrcode.viewfinder", "1.circle", "rectangle.portrait.and.arrow.right", "person.fill.badge.plus", "chevron.right.circle.fill"]
+        }
+    },
+    
+    {
+        "id": 4,
+        "title": "Loans",
+        "data": {
+            "label": ["Free Credit Score", "Loan & Card Offers", "Personal Loan", "Home Loan", "Pay Day Loan\n", "Consumer Durable Loan", "Pay Overdue EMI", "See more\n"],
+            "iconName": ["speedometer", "hand.draw", "folder.fill.badge.person.crop", "house.circle.fill", "indianrupeesign.circle.fill", "laptopcomputer.and.iphone", "creditcard.trianglebadge.exclamationmark", "chevron.right.circle.fill"]
+        }
+    },
+    
+    {
+        "id": 5,
+        "title": "Cards",
+        "data": {
+            "label": ["Debit Card", "Forex Card", "Image\n Debit Card", "Smart \n EMI Card", "FASTag", "Kotak \n Gift Card", "Card \n Protection", "See more\n"],
+            "iconName": ["creditcard.and.123", "creditcard", "lanyardcard.fill", "menucard", "tag.fill", "giftcard", "lock.doc", "arrow.right.circle.fill"]
+        }
+    }
+    
+]
+   
