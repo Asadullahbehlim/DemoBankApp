@@ -10,11 +10,6 @@ import UIKit
 
 class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let iconLabelArray = ["Account Overview", "Account Activity", "Statement\n", "Fixed/Recurring", "One View\n", "Cheque Requests", "Spendz Prepaid", "See more\n"]
-   
-    let iconNameArray = ["indianrupeesign.circle", "arrow.up.arrow.down", "note.text", "bitcoinsign.circle.fill", "eye", "banknote.fill", "cart", "chevron.right.circle.fill"]
-    
-    
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -56,8 +51,10 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return allData[1].data.label.count
+       
     }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
@@ -67,12 +64,12 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
         
-        cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
         // And in the cellForItemAt method:
         cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         cell.customImageView.tag = indexPath.row
         
-        cell.customLabel.text = iconLabelArray[indexPath.row]
+        cell.customLabel.text = allData[1].data.label[indexPath.row]
         
         return cell
     }
@@ -106,7 +103,7 @@ class BankViewController: UIView, UICollectionViewDelegate, UICollectionViewData
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
-        let buttonName = iconLabelArray[sender.tag]
+        let buttonName = allData[1].data.label[sender.tag]
         print(buttonName)
     }
 

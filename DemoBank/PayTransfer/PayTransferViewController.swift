@@ -11,10 +11,6 @@ import UIKit
 
 class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let iconLabelArray = ["Transfer Money", "Bill Pay & Recharge", "BHIM UPI", "Scan Any QR", "One Time Transfer\n", "Pay Your contact", "Add/Manage Beneficiary", "See more\n"]
-   
-    let iconNameArray = ["rectangle.portrait.and.arrow.right", "b.circle.fill", "arrow.right.square", "qrcode.viewfinder", "1.circle", "rectangle.portrait.and.arrow.right", "person.fill.badge.plus", "chevron.right.circle.fill"]
-    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -48,7 +44,7 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return allData[2].data.label.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,12 +55,12 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PayTransferCollectionViewCell
         
-        cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
         // And in the cellForItemAt method:
         cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         cell.customImageView.tag = indexPath.row
         
-        cell.customLabel.text = iconLabelArray[indexPath.row]
+        cell.customLabel.text = allData[2].data.label[indexPath.row]
         
         return cell
     }
@@ -84,7 +80,7 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "PayTransferTitleViewCell", for: indexPath) as! PayTransferTitleViewCell
-            header.titleLabel.text = "Pay & Transfer"
+            header.titleLabel.text = allData[2].title
             return header
         }
         return UICollectionReusableView()
@@ -95,7 +91,7 @@ class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionV
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
-        let buttonName = iconLabelArray[sender.tag]
+        let buttonName = allData[2].data.label[sender.tag]
         print(buttonName)
     }
 }

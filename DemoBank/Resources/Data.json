@@ -12,7 +12,7 @@
         "id": 2,
         "title": "Bank",
         "data": {
-            "label": ["Account Overview", "Account Activity", "Statement\n", "Fixed/Recurring", "One View\n", "Cheque Requests", "Spendz Prepatitle", "See more\n"],
+            "label": ["Account Overview", "Account Activity", "Statement\n", "Fixed/Recurring", "One View\n", "Cheque Requests", "Spendz Prepaid", "See more\n"],
             "iconName": ["indianrupeesign.circle", "arrow.up.arrow.down", "note.text", "bitcoinsign.circle.fill", "eye", "banknote.fill", "cart", "chevron.right.circle.fill"]
         }
     },
@@ -21,7 +21,7 @@
         "id": 3,
         "title": "Pay & Transfer",
         "data": {
-            "label": ["Transfer Money", "Bill Pay & Recharge", "BHIM UPI", "Scan Any QR", "One Time Transfer\n", "Pay Your contact", "Add/Manage Beneficiary", "See more\n"],
+            "label": ["Transfer Money", "Bill Pay & Recharge", "BHIM \n UPI", "Scan Any QR", "One Time Transfer\n", "Pay Your contact", "Add/Manage Beneficiary", "See more\n"],
             "iconName": ["rectangle.portrait.and.arrow.right", "b.circle.fill", "arrow.right.square", "qrcode.viewfinder", "1.circle", "rectangle.portrait.and.arrow.right", "person.fill.badge.plus", "chevron.right.circle.fill"]
         }
     },

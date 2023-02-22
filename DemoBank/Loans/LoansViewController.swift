@@ -10,10 +10,6 @@ import UIKit
 
 class LoansViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let iconLabelArray = ["Free Credit Score", "Loan & Card Offers", "Personal Loan", "Home Loan", "Pay Day Loan\n", "Consumer Durable Loan", "Pay Overdue EMI", "See more\n"]
-   
-    let iconNameArray = ["speedometer", "hand.draw", "folder.fill.badge.person.crop", "house.circle.fill", "indianrupeesign.circle.fill", "laptopcomputer.and.iphone", "creditcard.trianglebadge.exclamationmark", "chevron.right.circle.fill"]
-    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -47,7 +43,7 @@ class LoansViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return allData[3].data.label.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,12 +54,12 @@ class LoansViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! LoansCollectionViewCell
         
-        cell.customImageView.setImage(UIImage(systemName: iconNameArray[indexPath.row]), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: allData[3].data.iconName[indexPath.row]), for: .normal)
         // And in the cellForItemAt method:
         cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         cell.customImageView.tag = indexPath.row
         
-        cell.customLabel.text = iconLabelArray[indexPath.row]
+        cell.customLabel.text = allData[3].data.label[indexPath.row]
         
         return cell
     }
@@ -83,7 +79,7 @@ class LoansViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LoansTitleViewCell", for: indexPath) as! LoansTitleViewCell
-            header.titleLabel.text = "Loans"
+            header.titleLabel.text = allData[3].title
             return header
         }
         return UICollectionReusableView()
@@ -94,7 +90,7 @@ class LoansViewController: UIView, UICollectionViewDelegate, UICollectionViewDat
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
-        let buttonName = iconLabelArray[sender.tag]
+        let buttonName = allData[3].data.label[sender.tag]
         print(buttonName)
     }
 }
