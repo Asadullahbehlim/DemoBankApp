@@ -34,6 +34,7 @@
 		414BBEF7299820440040CB81 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */; };
 		414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */; };
 		414BBEFB299820760040CB81 /* LoansTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */; };
+		4160746E29A7E86F0095339A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160746D29A7E86F0095339A /* SearchViewController.swift */; };
 		417118F729A4D14100B9B593 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417118F629A4D14100B9B593 /* DataModel.swift */; };
 		417118FA29A4E13800B9B593 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 417118F929A4E13800B9B593 /* Data.json */; };
 		418EDBC829A358C700AAB169 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EDBC729A358C700AAB169 /* TextViewController.swift */; };
@@ -69,6 +70,7 @@
 		414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTitleViewCell.swift; sourceTree = "<group>"; };
 		414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansTitleViewCell.swift; sourceTree = "<group>"; };
+		4160746D29A7E86F0095339A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		417118F629A4D14100B9B593 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		417118F929A4E13800B9B593 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		418EDBC729A358C700AAB169 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				4131804029A6214500B1767F /* ButtonViewController.swift */,
 				414573DD29A697CA0012D806 /* SeeMoreController.swift */,
 				414573DF29A6A2600012D806 /* SeeMoreCollectionViewCell.swift */,
+				4160746D29A7E86F0095339A /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */,
 				4131804129A6214500B1767F /* ButtonViewController.swift in Sources */,
 				4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */,
+				4160746E29A7E86F0095339A /* SearchViewController.swift in Sources */,
 				414BBEF52998202D0040CB81 /* LoansCollectionViewCell.swift in Sources */,
 				4107B9BB2997CB57008BAA33 /* BankCollectionViewCell.swift in Sources */,
 				4107B9B52997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift in Sources */,

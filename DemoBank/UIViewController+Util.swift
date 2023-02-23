@@ -33,6 +33,9 @@ extension UIViewController {
             
             let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.size.width, height: 50))
 
+            let searchController = UISearchController(searchResultsController: nil)
+               let tableView = UITableView()
+               
             
             // Create stack view to hold the buttons
             let stackView = UIStackView()
@@ -54,7 +57,7 @@ extension UIViewController {
             
             let titleLabel = UILabel()
             titleLabel.text = title
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 15.5)
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 14.5)
             titleLabel.textColor = .white
             stackView.addArrangedSubview(titleLabel)
             
@@ -78,6 +81,8 @@ extension UIViewController {
             
             // Create search button
             let searchButton = UIButton()
+//            searchButton.placeholder = "Search"
+//            searchButton.delegate = self
             searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
             searchButton.tintColor = .white
             searchButton.addTarget(nil, action: #selector(searchButtonTapped), for: .touchUpInside)
@@ -89,6 +94,7 @@ extension UIViewController {
             let navigationItem = UINavigationItem()
             let rightBarButton = UIBarButtonItem(customView: stackView)
             navigationItem.rightBarButtonItem = rightBarButton
+            
             
             // Customize navigation bar appearance
             let navBarAppearance = UINavigationBarAppearance()
@@ -117,7 +123,8 @@ extension UIViewController {
     }
     
     @objc func searchButtonTapped(_ sender: UIButton) {
-        print("search tapped!")
+        print("Search Tapped")
+
     }
     
     @objc func bellButtonTapped(_ sender: UIButton) {
