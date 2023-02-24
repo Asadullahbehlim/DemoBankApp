@@ -48,19 +48,31 @@ class PayTransferView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        //        cell.backgroundColor = .red
-        //        cell.layer.cornerRadius = 15
-        //        return cell
-        
+      
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PayTransferCollectionViewCell
         
-        cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
-        // And in the cellForItemAt method:
-        cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        cell.customImageView.tag = indexPath.row
-        
-        cell.customLabel.text = allData[2].data.label[indexPath.row]
+        if allData[2].data.label.count > 8 {
+            
+            if indexPath.row == 7 {
+                cell.customImageView.setImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
+                cell.customImageView.setTitle("See more", for: .highlighted)
+                cell.customImageView.addTarget(self, action: #selector(goToSeeMore(_:)), for: .touchUpInside)
+                cell.customImageView.tag = indexPath.row
+                cell.customLabel.text = "See more\n"
+            }
+            else if indexPath.row < 8 {
+                cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
+                cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+                cell.customImageView.tag = indexPath.row
+                cell.customLabel.text = allData[2].data.label[indexPath.row]
+            }
+        }
+        else {
+                cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
+                cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+                cell.customImageView.tag = indexPath.row
+                cell.customLabel.text = allData[2].data.label[indexPath.row]
+        }
         
         return cell
     }
@@ -91,7 +103,32 @@ class PayTransferView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     }
 
     @objc func buttonTapped(_ sender: UIButton) {
-        let buttonName = allData[2].data.label[sender.tag]
-        print(buttonName)
+        guard let viewController = self.getViewController() else {
+            return
+        }
+        let buttonViewController = ButtonViewController()
+        buttonViewController.buttonToShow = allData[2].data.label[sender.tag]
+        viewController.present(buttonViewController, animated: true, completion: nil)
     }
+    
+    @objc func goToSeeMore(_ sender: UIButton) {
+        guard let viewController = self.getViewController() else {
+            return
+        }
+        
+        let seeMoreBankViewController = SeeMoreBankViewController()
+        viewController.present(seeMoreBankViewController, animated: true, completion: nil)
+    }
+    
+    private func getViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let nextResponder = responder?.next {
+            responder = nextResponder
+            if let viewController = responder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
+    
 }

@@ -100,10 +100,30 @@ class QuickAccessView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     
+//    @objc func buttonTapped(_ sender: UIButton) {
+//        let buttonName = allData[0].data.label[sender.tag]
+//
+//        print("\(buttonName) Tapped")
+//    }
+//
     @objc func buttonTapped(_ sender: UIButton) {
-        let buttonName = allData[0].data.label[sender.tag]
-
-        print("\(buttonName) Tapped")
+        guard let viewController = self.getViewController() else {
+            return
+        }
+        let buttonViewController = ButtonViewController()
+        buttonViewController.buttonToShow = allData[0].data.label[sender.tag]
+        viewController.present(buttonViewController, animated: true, completion: nil)
+    }
+    
+    private func getViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let nextResponder = responder?.next {
+            responder = nextResponder
+            if let viewController = responder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
     }
     
 }

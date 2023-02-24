@@ -52,23 +52,14 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        //        cell.backgroundColor = .red
-        //        cell.layer.cornerRadius = 15
-        //        return cell
-        
+      
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
         
                 cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
                 cell.customLabel.text = allData[1].data.label[indexPath.row]
-        
-        // And in the cellForItemAt method:
-        
-        // cell.customImageView.setTitle(allData[1].data.label[indexPath.row], for: .normal)
-        
-        
+    
         
         return cell
     }
@@ -101,17 +92,18 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @objc func buttonTapped(_ sender: UIButton) {
-        guard let viewController = self.getViewController() else {
-            return
-        }
-        let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[1].data.label[sender.tag]
-        viewController.present(buttonViewController, animated: true, completion: nil)
-    }
-    
-    @objc func goToSeeMore(_ sender: UIButton) {
-        print(sender.currentTitle!)
-    }
+         guard let viewController = self.getViewController() else {
+             return
+         }
+         let buttonViewController = ButtonViewController()
+         buttonViewController.buttonToShow = allData[1].data.label[sender.tag]
+         viewController.present(buttonViewController, animated: true, completion: nil)
+     }
+     
+     @objc func goToSeeMore(_ sender: UIButton) {
+         print(sender.currentTitle!)
+     }
+     
     
     private func getViewController() -> UIViewController? {
         var responder: UIResponder? = self

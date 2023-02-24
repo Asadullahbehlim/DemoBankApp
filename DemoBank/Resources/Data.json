@@ -12,8 +12,8 @@
         "id": 2,
         "title": "Bank",
         "data": {
-            "label": ["Account Overview", "Account Activity", "Statement\n", "Fixed/Recurring", "One View\n", "Cheque Requests", "Spendz Prepaid", "test\n", "test\n"],
-            "iconName": ["indianrupeesign.circle", "arrow.up.arrow.down", "note.text", "bitcoinsign.circle.fill", "eye", "banknote.fill", "cart", "indianrupeesign.circle", "indianrupeesign.circle"]
+            "label": ["Account Overview", "Account Activity", "Statement\n", "Fixed/Recurring", "One View\n", "Cheque Requests", "Spendz Prepaid", "See more\n", "See more\n"],
+            "iconName": ["indianrupeesign.circle", "arrow.up.arrow.down", "note.text", "bitcoinsign.circle.fill", "eye", "banknote.fill", "cart", "chevron.right.circle.fill", "chevron.right.circle.fill"]
         }
     },
     

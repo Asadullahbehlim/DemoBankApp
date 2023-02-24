@@ -1,49 +1,54 @@
 //
-//  LoansViewController.swift
+//  SeeMorePayTransferController.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 12/02/23.
+//  Created by Asadullah Behlim on 25/02/23.
 //
 
 import Foundation
 import UIKit
 
-class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        
+        // UICollectionViewFlowLayout is a concrete class of UICollectionViewLayout that has all its four members implemented, in the way that the cells will be arranged in a grid manner.
+        
+        // By using UICollectionViewFlowLayout, you can customize the layout of a collection view by specifying things like the size and position of items, the spacing between items and sections, and the direction of the scrolling.
+        
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
         return cv
     }()
     
-    let cellId = "LoansCollectionViewCell"
+    let cellId = "BankCollectionViewCell"
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 20
-        collectionView.register(LoansCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(LoansTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LoansTitleViewCell")
-
-        addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
+        
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)
         ])
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[3].data.label.count
+        return allData[2].data.label.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,33 +57,15 @@ class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! LoansCollectionViewCell
-        if allData[3].data.label.count > 8 {
-            
-            if indexPath.row == 7 {
-                cell.customImageView.setImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
-                cell.customImageView.setTitle("See more", for: .highlighted)
-                cell.customImageView.addTarget(self, action: #selector(goToSeeMore(_:)), for: .touchUpInside)
-                cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = "See more\n"
-            }
-            else if indexPath.row < 8 {
-                cell.customImageView.setImage(UIImage(systemName: allData[3].data.iconName[indexPath.row]), for: .normal)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
+        
+                cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
                 cell.customLabel.text = allData[3].data.label[indexPath.row]
-            }
-        }
-        else {
-                cell.customImageView.setImage(UIImage(systemName: allData[3].data.iconName[indexPath.row]), for: .normal)
-                cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-                cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[3].data.label[indexPath.row]
-        }
         
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 85, height: 85)
@@ -92,10 +79,12 @@ class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return 0
     }
     
+    // 'viewForSupplementaryElementOfKind' - This method is called by a collection view when it needs to display a supplementary view, such as a header or footer, and asks the delegate to provide a corresponding view.
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LoansTitleViewCell", for: indexPath) as! LoansTitleViewCell
-            header.titleLabel.text = allData[3].title
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
+            header.titleLabel.text = "Bank"
             return header
         }
         return UICollectionReusableView()
@@ -104,23 +93,18 @@ class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 50)
     }
-
+    
     @objc func buttonTapped(_ sender: UIButton) {
         guard let viewController = self.getViewController() else {
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[3].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[2].data.label[sender.tag]
         viewController.present(buttonViewController, animated: true, completion: nil)
     }
     
     @objc func goToSeeMore(_ sender: UIButton) {
-        guard let viewController = self.getViewController() else {
-            return
-        }
-        
-        let seeMoreBankViewController = SeeMoreBankViewController()
-        viewController.present(seeMoreBankViewController, animated: true, completion: nil)
+        print(sender.currentTitle!)
     }
     
     private func getViewController() -> UIViewController? {
@@ -133,6 +117,5 @@ class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         }
         return nil
     }
-    
 }
 
