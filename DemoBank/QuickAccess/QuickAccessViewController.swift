@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-class QuickAccessViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class QuickAccessView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
   
     let collectionView: UICollectionView = {

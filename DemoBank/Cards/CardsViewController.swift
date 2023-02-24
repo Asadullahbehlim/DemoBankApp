@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CardsViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

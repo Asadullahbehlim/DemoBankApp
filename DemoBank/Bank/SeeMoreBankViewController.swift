@@ -1,14 +1,14 @@
 //
-//  TestViewController.swift
+//  SeeMoreBankViewController.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 11/02/23.
+//  Created by Asadullah Behlim on 24/02/23.
 //
 
 import Foundation
 import UIKit
 
-class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,8 +24,8 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     let cellId = "BankCollectionViewCell"
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
@@ -35,18 +35,16 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
         
-        addSubview(collectionView)
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15)
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15)
         ])
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allData[1].data.label.count
@@ -61,28 +59,10 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
         
-        if allData[1].data.label.count > 8 {
-            
-            if indexPath.row == 7 {
-                cell.customImageView.setImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
-                cell.customImageView.setTitle("See more", for: .highlighted)
-                cell.customImageView.addTarget(self, action: #selector(goToSeeMore(_:)), for: .touchUpInside)
-                cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = "See more\n"
-            }
-            else if indexPath.row < 8 {
                 cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
                 cell.customLabel.text = allData[1].data.label[indexPath.row]
-            }
-        }
-        else {
-                cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
-                cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-                cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[1].data.label[indexPath.row]
-        }
         
         // And in the cellForItemAt method:
         
@@ -130,12 +110,7 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     @objc func goToSeeMore(_ sender: UIButton) {
-        guard let viewController = self.getViewController() else {
-            return
-        }
-        
-        let seeMoreBankViewController = SeeMoreBankViewController()
-        viewController.present(seeMoreBankViewController, animated: true, completion: nil)
+        print(sender.currentTitle!)
     }
     
     private func getViewController() -> UIViewController? {

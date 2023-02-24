@@ -32,10 +32,6 @@ extension UIViewController {
             let statusBarHeight = windowScene.statusBarManager?.statusBarFrame.height {
             
             let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: view.frame.size.width, height: 50))
-
-            let searchController = UISearchController(searchResultsController: nil)
-               let tableView = UITableView()
-               
             
             // Create stack view to hold the buttons
             let stackView = UIStackView()
@@ -81,8 +77,6 @@ extension UIViewController {
             
             // Create search button
             let searchButton = UIButton()
-//            searchButton.placeholder = "Search"
-//            searchButton.delegate = self
             searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
             searchButton.tintColor = .white
             searchButton.addTarget(nil, action: #selector(searchButtonTapped), for: .touchUpInside)

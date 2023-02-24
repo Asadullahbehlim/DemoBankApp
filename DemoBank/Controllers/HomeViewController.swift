@@ -24,15 +24,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let quickAccessViewController = QuickAccessViewController()
-        let bankViewController = BankViewController()
-        let payTransferViewcontroller = PayTransferViewController()
-        let loansViewController = LoansViewController()
-        let cardsViewController = CardsViewController()
+        let quickAccessView = QuickAccessView()
+        let bankView = BankView()
+        let payTransferView = PayTransferView()
+        let loansView = LoansView()
+        let cardsView = CardsView()
         let headerView = HeaderView()
         //        let thirdViewController = TestViewController()
         
-        let viewControllers = [quickAccessViewController, bankViewController, payTransferViewcontroller, loansViewController, cardsViewController  ]
+        let views = [quickAccessView, bankView, payTransferView, loansView, cardsView]
         
         // Set up the scroll view
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,9 +75,9 @@ class HomeViewController: UIViewController {
         
         
         // Add some views to the stack view
-        for viewController in viewControllers {
-            viewController.heightAnchor.constraint(equalToConstant: 230.0).isActive = true
-            stackView.addArrangedSubview(viewController)
+        for view in views {
+            view.heightAnchor.constraint(equalToConstant: 230.0).isActive = true
+            stackView.addArrangedSubview(view)
         }
     }
 }

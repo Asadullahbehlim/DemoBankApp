@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PayTransferViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PayTransferView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

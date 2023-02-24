@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LoansViewController: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
