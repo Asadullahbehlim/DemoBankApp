@@ -116,7 +116,7 @@ class PayTransferView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
             return
         }
         
-        let seeMoreBankViewController = SeeMoreBankViewController()
+        let seeMoreBankViewController = SeeMorePayTransferController()
         viewController.present(seeMoreBankViewController, animated: true, completion: nil)
     }
     

@@ -119,7 +119,7 @@ class LoansView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             return
         }
         
-        let seeMoreBankViewController = SeeMoreBankViewController()
+        let seeMoreBankViewController = SeeMoreLoansViewController()
         viewController.present(seeMoreBankViewController, animated: true, completion: nil)
     }
     

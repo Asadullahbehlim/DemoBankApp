@@ -22,7 +22,7 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
         return cv
     }()
     
-    let cellId = "BankCollectionViewCell"
+    let cellId = "PayTransferCollectionViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
         collectionView.layer.cornerRadius = 20
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
+        collectionView.register(PayTransferCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(PayTransferTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "PayTransferTitleViewCell")
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -57,12 +57,12 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PayTransferCollectionViewCell
         
                 cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[3].data.label[indexPath.row]
+                cell.customLabel.text = allData[2].data.label[indexPath.row]
         
         return cell
     }
@@ -83,8 +83,8 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
-            header.titleLabel.text = "Bank"
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "PayTransferTitleViewCell", for: indexPath) as! PayTransferTitleViewCell
+            header.titleLabel.text = "Pay & Transfer"
             return header
         }
         return UICollectionReusableView()

@@ -22,7 +22,7 @@ class SeeMoreCardsViewController: UIViewController, UICollectionViewDelegate, UI
         return cv
     }()
     
-    let cellId = "BankCollectionViewCell"
+    let cellId = "CardsCollectionViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class SeeMoreCardsViewController: UIViewController, UICollectionViewDelegate, UI
         collectionView.layer.cornerRadius = 20
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
+        collectionView.register(CardsCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CardsTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CardsTitleViewCell")
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -57,7 +57,7 @@ class SeeMoreCardsViewController: UIViewController, UICollectionViewDelegate, UI
         //        cell.layer.cornerRadius = 15
         //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardsCollectionViewCell
         
                 cell.customImageView.setImage(UIImage(systemName: allData[4].data.iconName[indexPath.row]), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
@@ -86,8 +86,8 @@ class SeeMoreCardsViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
-            header.titleLabel.text = "Bank"
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CardsTitleViewCell", for: indexPath) as! CardsTitleViewCell
+            header.titleLabel.text = "Cards"
             return header
         }
         return UICollectionReusableView()

@@ -122,7 +122,7 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             return
         }
         
-        let seeMoreBankViewController = SeeMoreBankViewController()
+        let seeMoreBankViewController = SeeMoreCardsViewController()
         viewController.present(seeMoreBankViewController, animated: true, completion: nil)
     }
     
