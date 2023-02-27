@@ -55,7 +55,6 @@ class HomeViewController: UIViewController {
         // Set up the stack view
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        // scrollView.isScrollEnabled = true
         stackView.spacing = 10
         // stackView.distribution = .fillEqually
         

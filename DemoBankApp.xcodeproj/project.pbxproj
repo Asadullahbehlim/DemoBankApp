@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4107B9B12997AC89008BAA33 /* QuickAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B02997AC89008BAA33 /* QuickAccessViewController.swift */; };
+		4107B9B12997AC89008BAA33 /* QuickAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B02997AC89008BAA33 /* QuickAccessView.swift */; };
 		4107B9B32997B221008BAA33 /* QuickAccessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B22997B221008BAA33 /* QuickAccessCollectionViewCell.swift */; };
 		4107B9B52997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B42997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift */; };
 		4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B82997CB45008BAA33 /* BankViewController.swift */; };
@@ -22,7 +22,8 @@
 		4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */; };
 		4131804129A6214500B1767F /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131804029A6214500B1767F /* ButtonViewController.swift */; };
 		4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */; };
-		4144F238299E308D00315553 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144F237299E308D00315553 /* CollectionViewController.swift */; };
+		413A9C3F29AC8E3C007CC10A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */; };
+		413A9C4129AC8E5A007CC10A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A9C4029AC8E5A007CC10A /* SearchResultsViewController.swift */; };
 		414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEE829981DE40040CB81 /* PayTransferViewController.swift */; };
 		414BBEEB29981E000040CB81 /* PayTransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */; };
 		414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */; };
@@ -42,7 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4107B9B02997AC89008BAA33 /* QuickAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessViewController.swift; sourceTree = "<group>"; };
+		4107B9B02997AC89008BAA33 /* QuickAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessView.swift; sourceTree = "<group>"; };
 		4107B9B22997B221008BAA33 /* QuickAccessCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessCollectionViewCell.swift; sourceTree = "<group>"; };
 		4107B9B42997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessHeaderTitleViewCell.swift; sourceTree = "<group>"; };
 		4107B9B82997CB45008BAA33 /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +60,8 @@
 		4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		4131804029A6214500B1767F /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		4144F237299E308D00315553 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = ../CollectionViewController.swift; sourceTree = "<group>"; };
+		413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		413A9C4029AC8E5A007CC10A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		414BBEE829981DE40040CB81 /* PayTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferViewController.swift; sourceTree = "<group>"; };
 		414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferCollectionViewCell.swift; sourceTree = "<group>"; };
 		414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferTitleViewCell.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 		4107B9B62997CA20008BAA33 /* QuickAccess */ = {
 			isa = PBXGroup;
 			children = (
-				4107B9B02997AC89008BAA33 /* QuickAccessViewController.swift */,
+				4107B9B02997AC89008BAA33 /* QuickAccessView.swift */,
 				4107B9B22997B221008BAA33 /* QuickAccessCollectionViewCell.swift */,
 				4107B9B42997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift */,
 			);
@@ -161,9 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				41213C5729924C8F0045EE54 /* HomeViewController.swift */,
-				4144F237299E308D00315553 /* CollectionViewController.swift */,
 				418EDBC729A358C700AAB169 /* TextViewController.swift */,
 				4131804029A6214500B1767F /* ButtonViewController.swift */,
+				413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */,
+				413A9C4029AC8E5A007CC10A /* SearchResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,10 +322,11 @@
 				416B6E4F29A8D36C00E39B8E /* SeeMoreBankViewController.swift in Sources */,
 				4168299F29A94D68007CEA5C /* SeeMoreCardsViewController.swift in Sources */,
 				41213C43299249E30045EE54 /* AppDelegate.swift in Sources */,
-				4107B9B12997AC89008BAA33 /* QuickAccessViewController.swift in Sources */,
+				4107B9B12997AC89008BAA33 /* QuickAccessView.swift in Sources */,
 				417118F729A4D14100B9B593 /* DataModel.swift in Sources */,
 				41100CE5299B6D2300832727 /* GlobalConstants.swift in Sources */,
 				4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */,
+				413A9C4129AC8E5A007CC10A /* SearchResultsViewController.swift in Sources */,
 				41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */,
 				4168299B29A94D27007CEA5C /* SeeMorePayTransferController.swift in Sources */,
 				4131804129A6214500B1767F /* ButtonViewController.swift in Sources */,
@@ -332,7 +336,7 @@
 				4168299D29A94D47007CEA5C /* SeeMoreLoansViewController.swift in Sources */,
 				4107B9B52997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift in Sources */,
 				414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */,
-				4144F238299E308D00315553 /* CollectionViewController.swift in Sources */,
+				413A9C3F29AC8E3C007CC10A /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

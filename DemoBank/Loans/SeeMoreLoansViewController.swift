@@ -103,6 +103,7 @@ class SeeMoreLoansViewController: UIViewController, UICollectionViewDelegate, UI
         let buttonViewController = ButtonViewController()
         buttonViewController.buttonToShow = allData[3].data.label[sender.tag]
         viewController.present(buttonViewController, animated: true, completion: nil)
+        self.present(buttonViewController, animated: true, completion: nil)
     }
     
     @objc func goToSeeMore(_ sender: UIButton) {

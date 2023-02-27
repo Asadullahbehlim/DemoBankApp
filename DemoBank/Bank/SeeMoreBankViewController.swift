@@ -98,8 +98,11 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
          let buttonViewController = ButtonViewController()
          buttonViewController.buttonToShow = allData[1].data.label[sender.tag]
          viewController.present(buttonViewController, animated: true, completion: nil)
+         buttonViewController.modalPresentationStyle = .popover
+        self.present(buttonViewController, animated: true, completion: nil)
+
      }
-     
+    
      @objc func goToSeeMore(_ sender: UIButton) {
          print(sender.currentTitle!)
      }

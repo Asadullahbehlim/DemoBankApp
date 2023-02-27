@@ -1,5 +1,5 @@
 //
-//  QuickAccessViewController.swift
+//  QuickAccessView.swift
 //  DemoBank
 //
 //  Created by Asadullah Behlim on 11/02/23.
