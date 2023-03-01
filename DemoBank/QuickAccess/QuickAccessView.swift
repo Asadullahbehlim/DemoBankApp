@@ -32,6 +32,7 @@ class QuickAccessView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = appGrayColor
+        collectionView.isScrollEnabled = false
         collectionView.register(QuickAccessCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(QuickAccessHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickAccessHeaderTitleViewCell")
         
@@ -51,7 +52,7 @@ class QuickAccessView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[0].data.label.count
+        return allData[0].data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,12 +63,12 @@ class QuickAccessView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! QuickAccessCollectionViewCell
         
-        cell.customImageView.setImage(UIImage(systemName: allData[0].data.iconName[indexPath.row]), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: allData[0].data[indexPath.row].iconName), for: .normal)
         // And in the cellForItemAt method:
         cell.customImageView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         cell.customImageView.tag = indexPath.row
         
-        cell.customLabel.text = allData[0].data.label[indexPath.row]
+        cell.customLabel.text = allData[0].data[indexPath.row].label
         
         return cell
     }
@@ -111,7 +112,7 @@ class QuickAccessView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[0].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[0].data[sender.tag].label
         viewController.present(buttonViewController, animated: true, completion: nil)
     }
     

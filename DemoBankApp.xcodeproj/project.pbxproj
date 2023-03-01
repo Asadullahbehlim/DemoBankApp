@@ -20,6 +20,8 @@
 		41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5729924C8F0045EE54 /* HomeViewController.swift */; };
 		41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5A299251CA0045EE54 /* HeaderView.swift */; };
 		4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */; };
+		412BEF1129ACD44900A200BE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BEF1029ACD44900A200BE /* LoginView.swift */; };
+		412BEF1329ACD45700A200BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BEF1229ACD45700A200BE /* LoginViewController.swift */; };
 		4131804129A6214500B1767F /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131804029A6214500B1767F /* ButtonViewController.swift */; };
 		4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */; };
 		413A9C3F29AC8E3C007CC10A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */; };
@@ -58,6 +60,8 @@
 		41213C5729924C8F0045EE54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		41213C5A299251CA0045EE54 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		412BEF1029ACD44900A200BE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		412BEF1229ACD45700A200BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4131804029A6214500B1767F /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				41213C4B299249E30045EE54 /* Assets.xcassets */,
 				4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */,
 				41213C4D299249E30045EE54 /* LaunchScreen.storyboard */,
+				412BEF0F29ACD42F00A200BE /* Login */,
 				41213C50299249E30045EE54 /* Info.plist */,
 			);
 			path = DemoBank;
@@ -177,6 +182,15 @@
 				41213C5A299251CA0045EE54 /* HeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		412BEF0F29ACD42F00A200BE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				412BEF1029ACD44900A200BE /* LoginView.swift */,
+				412BEF1229ACD45700A200BE /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4131803F29A61F4B00B1767F /* Manager */ = {
@@ -319,6 +333,7 @@
 				41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */,
 				414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */,
 				414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */,
+				412BEF1329ACD45700A200BE /* LoginViewController.swift in Sources */,
 				416B6E4F29A8D36C00E39B8E /* SeeMoreBankViewController.swift in Sources */,
 				4168299F29A94D68007CEA5C /* SeeMoreCardsViewController.swift in Sources */,
 				41213C43299249E30045EE54 /* AppDelegate.swift in Sources */,
@@ -329,6 +344,7 @@
 				413A9C4129AC8E5A007CC10A /* SearchResultsViewController.swift in Sources */,
 				41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */,
 				4168299B29A94D27007CEA5C /* SeeMorePayTransferController.swift in Sources */,
+				412BEF1129ACD44900A200BE /* LoginView.swift in Sources */,
 				4131804129A6214500B1767F /* ButtonViewController.swift in Sources */,
 				4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */,
 				414BBEF52998202D0040CB81 /* LoansCollectionViewCell.swift in Sources */,

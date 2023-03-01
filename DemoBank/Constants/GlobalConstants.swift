@@ -16,3 +16,4 @@ let appGrayColor = UIColor(red: 234/255, green: 235/255, blue: 237/255, alpha: 1
 
 
 let allData = ApiManager().parseJson()
+

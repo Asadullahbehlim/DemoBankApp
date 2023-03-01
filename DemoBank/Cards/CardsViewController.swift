@@ -30,6 +30,7 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.delegate = self
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 20
+        collectionView.isScrollEnabled = false
         collectionView.register(CardsCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(CardsTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CardsTitleViewCell")
 
@@ -48,14 +49,14 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[4].data.label.count
+        return allData[4].data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardsCollectionViewCell
         
-        if allData[4].data.label.count > 8 {
+        if allData[4].data.count > 8 {
             
             if indexPath.row == 7 {
                 cell.customImageView.setImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
@@ -65,17 +66,17 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
                 cell.customLabel.text = "See more\n"
             }
             else if indexPath.row < 8 {
-                cell.customImageView.setImage(UIImage(systemName: allData[4].data.iconName[indexPath.row]), for: .normal)
+                cell.customImageView.setImage(UIImage(systemName: allData[4].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[4].data.label[indexPath.row]
+                cell.customLabel.text = allData[4].data[indexPath.row].label
             }
         }
         else {
-                cell.customImageView.setImage(UIImage(systemName: allData[4].data.iconName[indexPath.row]), for: .normal)
+            cell.customImageView.setImage(UIImage(systemName: allData[4].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[4].data.label[indexPath.row]
+            cell.customLabel.text = allData[4].data[indexPath.row].label
         }
         
         return cell
@@ -113,7 +114,7 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[4].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[4].data[sender.tag].label
         viewController.present(buttonViewController, animated: true, completion: nil)
     }
     

@@ -47,22 +47,18 @@ class SeeMoreLoansViewController: UIViewController, UICollectionViewDelegate, UI
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[3].data.label.count
+        return allData[3].data.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        //        cell.backgroundColor = .red
-        //        cell.layer.cornerRadius = 15
-        //        return cell
-        
+       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! LoansCollectionViewCell
         
-                cell.customImageView.setImage(UIImage(systemName: allData[3].data.iconName[indexPath.row]), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: allData[3].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[3].data.label[indexPath.row]
+        cell.customLabel.text = allData[3].data[indexPath.row].label
         
         
         
@@ -101,7 +97,7 @@ class SeeMoreLoansViewController: UIViewController, UICollectionViewDelegate, UI
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[3].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[3].data[sender.tag].label
         viewController.present(buttonViewController, animated: true, completion: nil)
         self.present(buttonViewController, animated: true, completion: nil)
     }

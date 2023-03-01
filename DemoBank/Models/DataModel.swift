@@ -8,18 +8,17 @@
 //import Foundation
 import UIKit
 
+// MARK: - WelcomeElement
 struct DataModel: Codable {
     let id: Int
     let title: String
-    let data: IconModel
+    let data: [IconModel]
 }
 
+// MARK: - Datum
 struct IconModel: Codable {
-    let label: [String]
-    let iconName: [String]
+    let label, iconName: String
 }
-
-
 
 
 //struct QuickAccess: Codable {

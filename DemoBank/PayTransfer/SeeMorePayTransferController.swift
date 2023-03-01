@@ -47,7 +47,7 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[2].data.label.count
+        return allData[2].data.count
         
     }
     
@@ -59,10 +59,10 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PayTransferCollectionViewCell
         
-                cell.customImageView.setImage(UIImage(systemName: allData[2].data.iconName[indexPath.row]), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: allData[2].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[2].data.label[indexPath.row]
+        cell.customLabel.text = allData[2].data[indexPath.row].label
         
         return cell
     }
@@ -99,7 +99,7 @@ class SeeMorePayTransferController: UIViewController, UICollectionViewDelegate, 
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[2].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[2].data[sender.tag].label
         viewController.present(buttonViewController, animated: true, completion: nil)
         self.present(buttonViewController, animated: true, completion: nil)
 

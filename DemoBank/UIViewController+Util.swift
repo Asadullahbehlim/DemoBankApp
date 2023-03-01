@@ -37,7 +37,7 @@ extension UIViewController {
             let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.spacing = 12
+            stackView.spacing = 28
             stackView.alignment = .center
             
             
@@ -71,19 +71,19 @@ extension UIViewController {
             bellButton.setImage(UIImage(systemName: "bell"), for: .normal)
             bellButton.tintColor = .white
             bellButton.addTarget(nil, action: #selector(bellButtonTapped), for: .touchUpInside)
-            bellButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-            bellButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            bellButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            bellButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
             stackView.addArrangedSubview(bellButton)
             
             // Create search button
-            let searchButton = UIButton()
-            searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-            searchButton.tintColor = .white
-            searchButton.addTarget(nil, action: #selector(searchButtonTapped), for: .touchUpInside)
-            searchButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-            searchButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-            stackView.addArrangedSubview(searchButton)
-            
+//            let searchButton = UIButton()
+//            searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+//            searchButton.tintColor = .white
+//            searchButton.addTarget(nil, action: #selector(searchButtonTapped), for: .touchUpInside)
+//            searchButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+//            searchButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//            stackView.addArrangedSubview(searchButton)
+//
             // Add stack view to navigation item
             let navigationItem = UINavigationItem()
             let rightBarButton = UIBarButtonItem(customView: stackView)
@@ -116,10 +116,10 @@ extension UIViewController {
         print("profile tapped!")
     }
     
-    @objc func searchButtonTapped(_ sender: UIButton) {
-        print("Search Tapped")
-
-    }
+//    @objc func searchButtonTapped(_ sender: UIButton) {
+//        print("Search Tapped")
+//
+//    }
     
     @objc func bellButtonTapped(_ sender: UIButton) {
         print("bell tapped!")

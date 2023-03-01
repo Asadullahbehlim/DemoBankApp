@@ -47,7 +47,7 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[1].data.label.count
+        return allData[1].data.count
         
     }
     
@@ -55,10 +55,10 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
         
-                cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
+                cell.customImageView.setImage(UIImage(systemName: allData[1].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[1].data.label[indexPath.row]
+        cell.customLabel.text = allData[1].data[indexPath.row].label
     
         
         return cell
@@ -96,7 +96,7 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
              return
          }
          let buttonViewController = ButtonViewController()
-         buttonViewController.buttonToShow = allData[1].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[1].data[sender.tag].label
          viewController.present(buttonViewController, animated: true, completion: nil)
          buttonViewController.modalPresentationStyle = .popover
         self.present(buttonViewController, animated: true, completion: nil)

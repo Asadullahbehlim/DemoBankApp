@@ -32,6 +32,7 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         collectionView.layer.cornerRadius = 20
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.isScrollEnabled = false
         collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
         
@@ -49,15 +50,20 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[1].data.label.count
+        return allData[1].data.count
         
     }
+    
+//    if allData[1].data.label.count > 8: This checks if the number of items in the data source for section 1 is greater than 8.
+//    if indexPath.row == 7: This checks if the current cell being configured is the cell at index 7. If it is, then it configures it to display a "See more" button.
+//    else if indexPath.row < 8: If the current cell is not at index 7, then it configures it to display the corresponding icon and label from the data source. However, this condition ensures that only the first 8 items will be displayed in the collection view.
+//
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
         
-        if allData[1].data.label.count > 8 {
+        if allData[1].data.count > 8 {
             
             if indexPath.row == 7 {
                 cell.customImageView.setImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
@@ -67,17 +73,17 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
                 cell.customLabel.text = "See more\n"
             }
             else if indexPath.row < 8 {
-                cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
+                cell.customImageView.setImage(UIImage(systemName: allData[1].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[1].data.label[indexPath.row]
+                cell.customLabel.text = allData[1].data[indexPath.row].label
             }
         }
         else {
-                cell.customImageView.setImage(UIImage(systemName: allData[1].data.iconName[indexPath.row]), for: .normal)
+            cell.customImageView.setImage(UIImage(systemName: allData[1].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[1].data.label[indexPath.row]
+            cell.customLabel.text = allData[1].data[indexPath.row].label
         }
         
         return cell
@@ -115,7 +121,7 @@ class BankView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UI
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[1].data.label[sender.tag]
+        buttonViewController.buttonToShow = allData[1].data[sender.tag].label
         viewController.present(buttonViewController, animated: true, completion: nil)
     }
     
