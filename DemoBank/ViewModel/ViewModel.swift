@@ -7,25 +7,25 @@
 
 import Foundation
 
-class ApiManager {
+class ViewModel {
     
-    func parseJson() -> [DataModel]
+    var allData: [DataModel] = []
+    
+    func parseJson()
     {
-        var AccessDataArray: [DataModel] = []
         // Parse the JSON file and store the data in the AccessDataArray
         guard let url = Bundle.main.url(forResource: "Data", withExtension: "json") else {
             debugPrint("File not found!")
-            return AccessDataArray
+            return
         }
         do {
             let jsonData = try Data(contentsOf: url)
-            AccessDataArray = try JSONDecoder().decode([DataModel].self, from: jsonData)
-            debugPrint(AccessDataArray)
+            allData = try JSONDecoder().decode([DataModel].self, from: jsonData)
+            debugPrint(allData)
         }
         catch
         {
             debugPrint(error.localizedDescription)
         }
-        return AccessDataArray
     }
 }

@@ -179,10 +179,11 @@
     {
         "id": 5,
         "title": "Cards",
-        "data": [{
+        "data": [
+            {
             "label": "Debit Card",
             "iconName": "creditcard.and.123"
-        },
+            },
             {
                 "label": "Forex Card",
                 "iconName": "creditcard"

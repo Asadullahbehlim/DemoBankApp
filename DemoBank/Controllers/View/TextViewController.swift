@@ -13,7 +13,7 @@ class TextViewController: UIViewController {
     private let textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         label.textAlignment = .center
         return label
     }()

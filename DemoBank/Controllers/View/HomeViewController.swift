@@ -20,19 +20,21 @@ class HomeViewController: UIViewController {
     
     // UIStackView is a view container that arranges its subviews in a horizontal or vertical stack.
     
-    private var viewControllers: [UIViewController] = []
+//    private var viewControllers: [UIViewController] = []
+    
+    let headerView = HeaderView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let quickAccessView = QuickAccessView()
-        let bankView = BankView()
-        let payTransferView = PayTransferView()
-        let loansView = LoansView()
-        let cardsView = CardsView()
-        let headerView = HeaderView()
-        //        let thirdViewController = TestViewController()
+//        let quickAccessView = QuickAccessView()
+//        let bankView = BankView()
+//        let payTransferView = PayTransferView()
+//        let loansView = LoansView()
+//        let cardsView = CardsView()
+//
+//
         
-        let views = [quickAccessView, bankView, payTransferView, loansView, cardsView]
         
         // Set up the scroll view
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,9 +76,14 @@ class HomeViewController: UIViewController {
         
         
         // Add some views to the stack view
-        for view in views {
-            view.heightAnchor.constraint(equalToConstant: 230.0).isActive = true
-            stackView.addArrangedSubview(view)
+        for i in 0...4 {
+            
+            let myView = BoxView(index: i)
+            if i == 0 {
+                myView.heightAnchor.constraint(equalToConstant: 150.0).isActive = true                
+            }
+            myView.heightAnchor.constraint(equalToConstant: 230.0).isActive = true
+            stackView.addArrangedSubview(myView)
         }
     }
 }

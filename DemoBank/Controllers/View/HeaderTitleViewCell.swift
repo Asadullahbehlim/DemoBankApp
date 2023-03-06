@@ -1,15 +1,14 @@
 //
-//  LoansTitleViewCell.swift
+//  CustomCollectionViewCell.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 12/02/23.
+//  Created by Asadullah Behlim on 11/02/23.
 //
-
 
 import Foundation
 import UIKit
 
-class LoansTitleViewCell: UICollectionReusableView {
+class HeaderTitleViewCell: UICollectionReusableView {
     let titleLabel = UILabel()
     
     override init(frame: CGRect) {

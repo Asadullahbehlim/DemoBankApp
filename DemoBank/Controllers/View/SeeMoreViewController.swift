@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SeeMoreViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -22,18 +22,33 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
         return cv
     }()
     
-    let cellId = "BankCollectionViewCell"
+    let cellId = "CollectionViewCell"
+    
+    var index: Int
+    
+    let viewModel = ViewModel()
+    
+    init(index: Int) {
+        self.index = index
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.parseJson()
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 20
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(BankCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(BankHeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "BankHeaderTitleViewCell")
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(HeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderTitleViewCell")
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -47,18 +62,18 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[1].data.count
+        return viewModel.allData[index].data.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BankCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CollectionViewCell
         
-                cell.customImageView.setImage(UIImage(systemName: allData[1].data[indexPath.row].iconName), for: .normal)
+        cell.customImageView.setImage(UIImage(systemName: viewModel.allData[index].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-        cell.customLabel.text = allData[1].data[indexPath.row].label
+        cell.customLabel.text = viewModel.allData[index].data[indexPath.row].label
     
         
         return cell
@@ -80,8 +95,8 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BankHeaderTitleViewCell", for: indexPath) as! BankHeaderTitleViewCell
-            header.titleLabel.text = "Bank"
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderTitleViewCell", for: indexPath) as! HeaderTitleViewCell
+            header.titleLabel.text = viewModel.allData[index].title
             return header
         }
         return UICollectionReusableView()
@@ -96,7 +111,7 @@ class SeeMoreBankViewController: UIViewController, UICollectionViewDelegate, UIC
              return
          }
          let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[1].data[sender.tag].label
+        buttonViewController.buttonToShow = viewModel.allData[index].data[sender.tag].label
          viewController.present(buttonViewController, animated: true, completion: nil)
          buttonViewController.modalPresentationStyle = .popover
         self.present(buttonViewController, animated: true, completion: nil)

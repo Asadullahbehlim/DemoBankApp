@@ -1,19 +1,19 @@
 //
-//  CardsViewController.swift
+//  TestViewController.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 12/02/23.
+//  Created by Asadullah Behlim on 11/02/23.
 //
-
 
 import Foundation
 import UIKit
 
-class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  
+class BoxView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-     //   UICollectionViewFlowLayout is a class in UIKit that provides a layout for a UICollectionView object
+        
+        // UICollectionViewFlowLayout is a concrete class of UICollectionViewLayout that has all its four members implemented, in the way that the cells will be arranged in a grid manner.
         
         // By using UICollectionViewFlowLayout, you can customize the layout of a collection view by specifying things like the size and position of items, the spacing between items and sections, and the direction of the scrolling.
         
@@ -22,20 +22,28 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return cv
     }()
     
-    let cellId = "CardsCollectionViewCell"
+    let cellId = "BoxView"
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    var index: Int
+    
+    let viewModel = ViewModel()
+    
+    init(index: Int) {
+        self.index = index
+        super.init(frame: .zero)
+        
+        viewModel.parseJson()
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 20
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.isScrollEnabled = false
-        collectionView.register(CardsCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(CardsTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CardsTitleViewCell")
-
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(HeaderTitleViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderTitleViewCell")
+        
         addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
@@ -49,14 +57,20 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allData[4].data.count
+        return viewModel.allData[index].data.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardsCollectionViewCell
+    //    if allData[1].data.label.count > 8: This checks if the number of items in the data source for section 1 is greater than 8.
+    //    if indexPath.row == 7: This checks if the current cell being configured is the cell at index 7. If it is, then it configures it to display a "See more" button.
+    //    else if indexPath.row < 8: If the current cell is not at index 7, then it configures it to display the corresponding icon and label from the data source. However, this condition ensures that only the first 8 items will be displayed in the collection view.
+    //
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if allData[4].data.count > 8 {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CollectionViewCell
+        
+        if viewModel.allData[index].data.count > 8 {
             
             if indexPath.row == 7 {
                 cell.customImageView.setImage(UIImage(systemName: "chevron.right.circle.fill"), for: .normal)
@@ -66,17 +80,17 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
                 cell.customLabel.text = "See more\n"
             }
             else if indexPath.row < 8 {
-                cell.customImageView.setImage(UIImage(systemName: allData[4].data[indexPath.row].iconName), for: .normal)
+                cell.customImageView.setImage(UIImage(systemName: viewModel.allData[index].data[indexPath.row].iconName), for: .normal)
                 cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 cell.customImageView.tag = indexPath.row
-                cell.customLabel.text = allData[4].data[indexPath.row].label
+                cell.customLabel.text = viewModel.allData[index].data[indexPath.row].label
             }
         }
         else {
-            cell.customImageView.setImage(UIImage(systemName: allData[4].data[indexPath.row].iconName), for: .normal)
-                cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-                cell.customImageView.tag = indexPath.row
-            cell.customLabel.text = allData[4].data[indexPath.row].label
+            cell.customImageView.setImage(UIImage(systemName: viewModel.allData[index].data[indexPath.row].iconName), for: .normal)
+            cell.customImageView.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+            cell.customImageView.tag = indexPath.row
+            cell.customLabel.text = viewModel.allData[index].data[indexPath.row].label
         }
         
         return cell
@@ -94,12 +108,12 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return 0
     }
     
-    // viewForSupplementaryElementOfKind" is a method in the UICollectionViewDelegate protocol of UIKit. It is used to return the supplementary view for a given section in a UICollectionView.
+    // 'viewForSupplementaryElementOfKind' - This method is called by a collection view when it needs to display a supplementary view, such as a header or footer, and asks the delegate to provide a corresponding view.
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CardsTitleViewCell", for: indexPath) as! CardsTitleViewCell
-            header.titleLabel.text = "Cards"
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderTitleViewCell", for: indexPath) as! HeaderTitleViewCell
+            header.titleLabel.text = viewModel.allData[index].title
             return header
         }
         return UICollectionReusableView()
@@ -108,13 +122,13 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 50)
     }
-
+    
     @objc func buttonTapped(_ sender: UIButton) {
         guard let viewController = self.getViewController() else {
             return
         }
         let buttonViewController = ButtonViewController()
-        buttonViewController.buttonToShow = allData[4].data[sender.tag].label
+        buttonViewController.buttonToShow = viewModel.allData[index].data[sender.tag].label
         viewController.present(buttonViewController, animated: true, completion: nil)
     }
     
@@ -123,7 +137,7 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             return
         }
         
-        let seeMoreBankViewController = SeeMoreCardsViewController()
+        let seeMoreBankViewController = SeeMoreViewController(index: index)
         viewController.present(seeMoreBankViewController, animated: true, completion: nil)
     }
     
@@ -138,4 +152,3 @@ class CardsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return nil
     }
 }
-

@@ -1,14 +1,14 @@
 //
-//  PayTransferCollectionViewCell.swift
+//  CustomCollectionViewCell.swift
 //  DemoBank
 //
-//  Created by Asadullah Behlim on 12/02/23.
+//  Created by Asadullah Behlim on 11/02/23.
 //
 
 import Foundation
 import UIKit
 
-class PayTransferCollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
 
     let customImageView = UIButton(type: .system)
     let customLabel = UILabel()
@@ -24,7 +24,7 @@ class PayTransferCollectionViewCell: UICollectionViewCell {
         customImageView.frame = CGRect(x: 0, y: 0, width: 5, height: 5)
         customImageView.layer.cornerRadius = 10
         contentView.addSubview(customImageView)
-
+        
         customLabel.textAlignment = .center
         customLabel.translatesAutoresizingMaskIntoConstraints = false
         customLabel.numberOfLines = 2
@@ -33,9 +33,9 @@ class PayTransferCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(customLabel)
 
         NSLayoutConstraint.activate([
-            customImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            customImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             customImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            customImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            customImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             customImageView.bottomAnchor.constraint(equalTo: customLabel.topAnchor, constant: -5),
 
             customLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

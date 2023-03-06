@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4107B9B12997AC89008BAA33 /* QuickAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B02997AC89008BAA33 /* QuickAccessView.swift */; };
-		4107B9B32997B221008BAA33 /* QuickAccessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B22997B221008BAA33 /* QuickAccessCollectionViewCell.swift */; };
-		4107B9B52997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B42997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift */; };
-		4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B82997CB45008BAA33 /* BankViewController.swift */; };
-		4107B9BB2997CB57008BAA33 /* BankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9BA2997CB57008BAA33 /* BankCollectionViewCell.swift */; };
-		4107B9BD2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9BC2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift */; };
+		4107B9B92997CB45008BAA33 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9B82997CB45008BAA33 /* BoxView.swift */; };
+		4107B9BB2997CB57008BAA33 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9BA2997CB57008BAA33 /* CollectionViewCell.swift */; };
+		4107B9BD2997CB6A008BAA33 /* HeaderTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4107B9BC2997CB6A008BAA33 /* HeaderTitleViewCell.swift */; };
 		41100CE5299B6D2300832727 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41100CE4299B6D2300832727 /* GlobalConstants.swift */; };
 		41213C43299249E30045EE54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C42299249E30045EE54 /* AppDelegate.swift */; };
 		41213C4C299249E30045EE54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41213C4B299249E30045EE54 /* Assets.xcassets */; };
@@ -20,37 +17,18 @@
 		41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5729924C8F0045EE54 /* HomeViewController.swift */; };
 		41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41213C5A299251CA0045EE54 /* HeaderView.swift */; };
 		4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */; };
-		412BEF1129ACD44900A200BE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BEF1029ACD44900A200BE /* LoginView.swift */; };
-		412BEF1329ACD45700A200BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BEF1229ACD45700A200BE /* LoginViewController.swift */; };
 		4131804129A6214500B1767F /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131804029A6214500B1767F /* ButtonViewController.swift */; };
-		4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */; };
-		413A9C3F29AC8E3C007CC10A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */; };
-		413A9C4129AC8E5A007CC10A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A9C4029AC8E5A007CC10A /* SearchResultsViewController.swift */; };
-		414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEE829981DE40040CB81 /* PayTransferViewController.swift */; };
-		414BBEEB29981E000040CB81 /* PayTransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */; };
-		414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */; };
-		414BBEF129981FE30040CB81 /* LoansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF029981FE30040CB81 /* LoansViewController.swift */; };
-		414BBEF329981FFF0040CB81 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF229981FFF0040CB81 /* CardsViewController.swift */; };
-		414BBEF52998202D0040CB81 /* LoansCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF42998202D0040CB81 /* LoansCollectionViewCell.swift */; };
-		414BBEF7299820440040CB81 /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */; };
-		414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */; };
-		414BBEFB299820760040CB81 /* LoansTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */; };
-		4168299B29A94D27007CEA5C /* SeeMorePayTransferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168299A29A94D27007CEA5C /* SeeMorePayTransferController.swift */; };
-		4168299D29A94D47007CEA5C /* SeeMoreLoansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168299C29A94D47007CEA5C /* SeeMoreLoansViewController.swift */; };
-		4168299F29A94D68007CEA5C /* SeeMoreCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4168299E29A94D68007CEA5C /* SeeMoreCardsViewController.swift */; };
-		416B6E4F29A8D36C00E39B8E /* SeeMoreBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416B6E4E29A8D36C00E39B8E /* SeeMoreBankViewController.swift */; };
+		4137FF9E29A5E7A600DE54E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137FF9D29A5E7A600DE54E8 /* ViewModel.swift */; };
+		416B6E4F29A8D36C00E39B8E /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416B6E4E29A8D36C00E39B8E /* SeeMoreViewController.swift */; };
 		417118F729A4D14100B9B593 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417118F629A4D14100B9B593 /* DataModel.swift */; };
 		417118FA29A4E13800B9B593 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 417118F929A4E13800B9B593 /* Data.json */; };
 		418EDBC829A358C700AAB169 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EDBC729A358C700AAB169 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4107B9B02997AC89008BAA33 /* QuickAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessView.swift; sourceTree = "<group>"; };
-		4107B9B22997B221008BAA33 /* QuickAccessCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessCollectionViewCell.swift; sourceTree = "<group>"; };
-		4107B9B42997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAccessHeaderTitleViewCell.swift; sourceTree = "<group>"; };
-		4107B9B82997CB45008BAA33 /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
-		4107B9BA2997CB57008BAA33 /* BankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionViewCell.swift; sourceTree = "<group>"; };
-		4107B9BC2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankHeaderTitleViewCell.swift; sourceTree = "<group>"; };
+		4107B9B82997CB45008BAA33 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		4107B9BA2997CB57008BAA33 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		4107B9BC2997CB6A008BAA33 /* HeaderTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleViewCell.swift; sourceTree = "<group>"; };
 		41100CE4299B6D2300832727 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		41213C3F299249E30045EE54 /* DemoBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41213C42299249E30045EE54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,25 +38,9 @@
 		41213C5729924C8F0045EE54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		41213C5A299251CA0045EE54 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
-		412BEF1029ACD44900A200BE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		412BEF1229ACD45700A200BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4131804029A6214500B1767F /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
-		4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		413A9C4029AC8E5A007CC10A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
-		414BBEE829981DE40040CB81 /* PayTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferViewController.swift; sourceTree = "<group>"; };
-		414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferCollectionViewCell.swift; sourceTree = "<group>"; };
-		414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTransferTitleViewCell.swift; sourceTree = "<group>"; };
-		414BBEF029981FE30040CB81 /* LoansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansViewController.swift; sourceTree = "<group>"; };
-		414BBEF229981FFF0040CB81 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
-		414BBEF42998202D0040CB81 /* LoansCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansCollectionViewCell.swift; sourceTree = "<group>"; };
-		414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
-		414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTitleViewCell.swift; sourceTree = "<group>"; };
-		414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansTitleViewCell.swift; sourceTree = "<group>"; };
-		4168299A29A94D27007CEA5C /* SeeMorePayTransferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMorePayTransferController.swift; sourceTree = "<group>"; };
-		4168299C29A94D47007CEA5C /* SeeMoreLoansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreLoansViewController.swift; sourceTree = "<group>"; };
-		4168299E29A94D68007CEA5C /* SeeMoreCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreCardsViewController.swift; sourceTree = "<group>"; };
-		416B6E4E29A8D36C00E39B8E /* SeeMoreBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreBankViewController.swift; sourceTree = "<group>"; };
+		4137FF9D29A5E7A600DE54E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		416B6E4E29A8D36C00E39B8E /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
 		417118F629A4D14100B9B593 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		417118F929A4E13800B9B593 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		418EDBC729A358C700AAB169 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
@@ -95,27 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4107B9B62997CA20008BAA33 /* QuickAccess */ = {
-			isa = PBXGroup;
-			children = (
-				4107B9B02997AC89008BAA33 /* QuickAccessView.swift */,
-				4107B9B22997B221008BAA33 /* QuickAccessCollectionViewCell.swift */,
-				4107B9B42997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift */,
-			);
-			path = QuickAccess;
-			sourceTree = "<group>";
-		};
-		4107B9B72997CA7F008BAA33 /* Bank */ = {
-			isa = PBXGroup;
-			children = (
-				4107B9B82997CB45008BAA33 /* BankViewController.swift */,
-				4107B9BA2997CB57008BAA33 /* BankCollectionViewCell.swift */,
-				4107B9BC2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift */,
-				416B6E4E29A8D36C00E39B8E /* SeeMoreBankViewController.swift */,
-			);
-			path = Bank;
-			sourceTree = "<group>";
-		};
 		41100CE3299B6CF600832727 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,95 +84,26 @@
 		41213C41299249E30045EE54 /* DemoBank */ = {
 			isa = PBXGroup;
 			children = (
-				414BBEEF29981FB60040CB81 /* Cards */,
-				414BBEEE29981FAD0040CB81 /* Loans */,
-				414BBEE729981D650040CB81 /* PayTransfer */,
-				4107B9B72997CA7F008BAA33 /* Bank */,
-				4107B9B62997CA20008BAA33 /* QuickAccess */,
-				41213C5629924C740045EE54 /* Controllers */,
-				417118F829A4E00000B9B593 /* Resources */,
-				4131803F29A61F4B00B1767F /* Manager */,
 				418EDBC929A3962B00AAB169 /* Models */,
-				41213C59299251A90045EE54 /* Views */,
-				41213C42299249E30045EE54 /* AppDelegate.swift */,
+				41DD5D1F29B622890026DF26 /* View */,
+				4131803F29A61F4B00B1767F /* ViewModel */,
+				417118F829A4E00000B9B593 /* Resources */,
 				41100CE3299B6CF600832727 /* Constants */,
+				41213C42299249E30045EE54 /* AppDelegate.swift */,
 				41213C4B299249E30045EE54 /* Assets.xcassets */,
 				4125B1C829966B7000AB30E9 /* UIViewController+Util.swift */,
 				41213C4D299249E30045EE54 /* LaunchScreen.storyboard */,
-				412BEF0F29ACD42F00A200BE /* Login */,
 				41213C50299249E30045EE54 /* Info.plist */,
 			);
 			path = DemoBank;
 			sourceTree = "<group>";
 		};
-		41213C5629924C740045EE54 /* Controllers */ = {
+		4131803F29A61F4B00B1767F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				41213C5729924C8F0045EE54 /* HomeViewController.swift */,
-				418EDBC729A358C700AAB169 /* TextViewController.swift */,
-				4131804029A6214500B1767F /* ButtonViewController.swift */,
-				413A9C3E29AC8E3C007CC10A /* SearchViewController.swift */,
-				413A9C4029AC8E5A007CC10A /* SearchResultsViewController.swift */,
+				4137FF9D29A5E7A600DE54E8 /* ViewModel.swift */,
 			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		41213C59299251A90045EE54 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				41213C5A299251CA0045EE54 /* HeaderView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		412BEF0F29ACD42F00A200BE /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				412BEF1029ACD44900A200BE /* LoginView.swift */,
-				412BEF1229ACD45700A200BE /* LoginViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		4131803F29A61F4B00B1767F /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				4137FF9D29A5E7A600DE54E8 /* ApiManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		414BBEE729981D650040CB81 /* PayTransfer */ = {
-			isa = PBXGroup;
-			children = (
-				414BBEE829981DE40040CB81 /* PayTransferViewController.swift */,
-				414BBEEA29981E000040CB81 /* PayTransferCollectionViewCell.swift */,
-				414BBEEC29981E2A0040CB81 /* PayTransferTitleViewCell.swift */,
-				4168299A29A94D27007CEA5C /* SeeMorePayTransferController.swift */,
-			);
-			path = PayTransfer;
-			sourceTree = "<group>";
-		};
-		414BBEEE29981FAD0040CB81 /* Loans */ = {
-			isa = PBXGroup;
-			children = (
-				414BBEF029981FE30040CB81 /* LoansViewController.swift */,
-				414BBEF42998202D0040CB81 /* LoansCollectionViewCell.swift */,
-				414BBEFA299820760040CB81 /* LoansTitleViewCell.swift */,
-				4168299C29A94D47007CEA5C /* SeeMoreLoansViewController.swift */,
-			);
-			path = Loans;
-			sourceTree = "<group>";
-		};
-		414BBEEF29981FB60040CB81 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				414BBEF229981FFF0040CB81 /* CardsViewController.swift */,
-				414BBEF6299820440040CB81 /* CardsCollectionViewCell.swift */,
-				414BBEF8299820620040CB81 /* CardsTitleViewCell.swift */,
-				4168299E29A94D68007CEA5C /* SeeMoreCardsViewController.swift */,
-			);
-			path = Cards;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		417118F829A4E00000B9B593 /* Resources */ = {
@@ -248,6 +120,22 @@
 				417118F629A4D14100B9B593 /* DataModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		41DD5D1F29B622890026DF26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4107B9B82997CB45008BAA33 /* BoxView.swift */,
+				41213C5729924C8F0045EE54 /* HomeViewController.swift */,
+				418EDBC729A358C700AAB169 /* TextViewController.swift */,
+				4131804029A6214500B1767F /* ButtonViewController.swift */,
+				4107B9BC2997CB6A008BAA33 /* HeaderTitleViewCell.swift */,
+				416B6E4E29A8D36C00E39B8E /* SeeMoreViewController.swift */,
+				4107B9BA2997CB57008BAA33 /* CollectionViewCell.swift */,
+				41213C5A299251CA0045EE54 /* HeaderView.swift */,
+			);
+			name = View;
+			path = Controllers/View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,38 +209,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414BBEF129981FE30040CB81 /* LoansViewController.swift in Sources */,
-				414BBEEB29981E000040CB81 /* PayTransferCollectionViewCell.swift in Sources */,
-				414BBEF329981FFF0040CB81 /* CardsViewController.swift in Sources */,
-				414BBEF7299820440040CB81 /* CardsCollectionViewCell.swift in Sources */,
-				414BBEFB299820760040CB81 /* LoansTitleViewCell.swift in Sources */,
 				4125B1C929966B7000AB30E9 /* UIViewController+Util.swift in Sources */,
-				4107B9B32997B221008BAA33 /* QuickAccessCollectionViewCell.swift in Sources */,
 				418EDBC829A358C700AAB169 /* TextViewController.swift in Sources */,
-				4107B9BD2997CB6A008BAA33 /* BankHeaderTitleViewCell.swift in Sources */,
+				4107B9BD2997CB6A008BAA33 /* HeaderTitleViewCell.swift in Sources */,
 				41213C5B299251CA0045EE54 /* HeaderView.swift in Sources */,
-				414BBEED29981E2A0040CB81 /* PayTransferTitleViewCell.swift in Sources */,
-				414BBEF9299820620040CB81 /* CardsTitleViewCell.swift in Sources */,
-				412BEF1329ACD45700A200BE /* LoginViewController.swift in Sources */,
-				416B6E4F29A8D36C00E39B8E /* SeeMoreBankViewController.swift in Sources */,
-				4168299F29A94D68007CEA5C /* SeeMoreCardsViewController.swift in Sources */,
+				416B6E4F29A8D36C00E39B8E /* SeeMoreViewController.swift in Sources */,
 				41213C43299249E30045EE54 /* AppDelegate.swift in Sources */,
-				4107B9B12997AC89008BAA33 /* QuickAccessView.swift in Sources */,
 				417118F729A4D14100B9B593 /* DataModel.swift in Sources */,
 				41100CE5299B6D2300832727 /* GlobalConstants.swift in Sources */,
-				4137FF9E29A5E7A600DE54E8 /* ApiManager.swift in Sources */,
-				413A9C4129AC8E5A007CC10A /* SearchResultsViewController.swift in Sources */,
+				4137FF9E29A5E7A600DE54E8 /* ViewModel.swift in Sources */,
 				41213C5829924C8F0045EE54 /* HomeViewController.swift in Sources */,
-				4168299B29A94D27007CEA5C /* SeeMorePayTransferController.swift in Sources */,
-				412BEF1129ACD44900A200BE /* LoginView.swift in Sources */,
 				4131804129A6214500B1767F /* ButtonViewController.swift in Sources */,
-				4107B9B92997CB45008BAA33 /* BankViewController.swift in Sources */,
-				414BBEF52998202D0040CB81 /* LoansCollectionViewCell.swift in Sources */,
-				4107B9BB2997CB57008BAA33 /* BankCollectionViewCell.swift in Sources */,
-				4168299D29A94D47007CEA5C /* SeeMoreLoansViewController.swift in Sources */,
-				4107B9B52997BABA008BAA33 /* QuickAccessHeaderTitleViewCell.swift in Sources */,
-				414BBEE929981DE40040CB81 /* PayTransferViewController.swift in Sources */,
-				413A9C3F29AC8E3C007CC10A /* SearchViewController.swift in Sources */,
+				4107B9B92997CB45008BAA33 /* BoxView.swift in Sources */,
+				4107B9BB2997CB57008BAA33 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
