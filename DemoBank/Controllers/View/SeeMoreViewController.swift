@@ -114,8 +114,7 @@ class SeeMoreViewController: UIViewController, UICollectionViewDelegate, UIColle
         buttonViewController.buttonToShow = viewModel.allData[index].data[sender.tag].label
          viewController.present(buttonViewController, animated: true, completion: nil)
          buttonViewController.modalPresentationStyle = .popover
-        self.present(buttonViewController, animated: true, completion: nil)
-
+         self.present(buttonViewController, animated: true, completion: nil)
      }
     
      @objc func goToSeeMore(_ sender: UIButton) {

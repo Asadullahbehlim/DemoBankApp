@@ -41,7 +41,7 @@ extension UIViewController {
             stackView.alignment = .center
             
             
-            // Create profile button
+            // Create menu button
             let menuButton = UIButton()
             menuButton.setImage(UIImage(systemName: "text.alignleft"), for: .normal)
             menuButton.tintColor = .white
@@ -50,13 +50,14 @@ extension UIViewController {
             menuButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
             menuButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
             stackView.addArrangedSubview(menuButton)
-            
+
+           
             let titleLabel = UILabel()
             titleLabel.text = title
             titleLabel.font = UIFont.boldSystemFont(ofSize: 14.5)
             titleLabel.textColor = .white
             stackView.addArrangedSubview(titleLabel)
-            
+                        
             // Create profile button
             let profileButton = UIButton()
             profileButton.setImage(UIImage(systemName: "person.crop.circle.fill"), for: .normal)
@@ -108,12 +109,17 @@ extension UIViewController {
     }
 
     
-    @objc func menuButtonTapped(_ sender: UIButton) {
-        print("menu tapped!")
+    @objc func menuButtonTapped() {
+        let textViewController =  TextViewController()
+        textViewController.textToShow = "Menu Button Tapped"
+        self.present(textViewController, animated: true, completion: nil)
     }
-    
+
+
     @objc func profileButtonTapped(_ sender: UIButton) {
-        print("profile tapped!")
+    let textViewController = TextViewController()
+        textViewController.textToShow = "Profile Button Tapped"
+        self.present(textViewController, animated: true, completion: nil)
     }
     
 //    @objc func searchButtonTapped(_ sender: UIButton) {
@@ -122,6 +128,8 @@ extension UIViewController {
 //    }
     
     @objc func bellButtonTapped(_ sender: UIButton) {
-        print("bell tapped!")
+        let textViewController = TextViewController()
+        textViewController.textToShow = "Notifications Tapped"
+        self.present(textViewController, animated: true, completion: nil)
     }
 }
