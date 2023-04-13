@@ -11,7 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
     
     lazy private var navBar: UINavigationBar = {
-        let view = self.setNavigationBar(title: "Kotak Mahindra Bank")
+        let view = self.setNavigationBar(title: "Demo Bank Application")
+
         return view
     }()
     

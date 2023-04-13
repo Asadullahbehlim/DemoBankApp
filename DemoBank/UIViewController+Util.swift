@@ -37,7 +37,7 @@ extension UIViewController {
             let stackView = UIStackView()
             stackView.axis = .horizontal
             stackView.translatesAutoresizingMaskIntoConstraints = false
-            stackView.spacing = 28
+            stackView.spacing = 25
             stackView.alignment = .center
             
             
@@ -47,7 +47,7 @@ extension UIViewController {
             menuButton.tintColor = .white
             menuButton.translatesAutoresizingMaskIntoConstraints = false
             menuButton.addTarget(nil, action: #selector(menuButtonTapped), for: .touchUpInside)
-            menuButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            menuButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
             menuButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
             stackView.addArrangedSubview(menuButton)
 
