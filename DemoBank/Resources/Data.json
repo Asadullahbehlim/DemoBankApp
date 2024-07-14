@@ -201,7 +201,7 @@
                 "iconName": "tag.fill"
             },
             {
-                "label": "Kotak \n Gift Card",
+                "label": "Gift Cards",
                 "iconName": "giftcard"
             },
             {
@@ -209,7 +209,7 @@
                 "iconName": "lock.doc"
             },
             {
-                "label": "Kotak Offers",
+                "label": "Bank Offers",
                 "iconName": "cart.badge.plus"
             }
         ]
